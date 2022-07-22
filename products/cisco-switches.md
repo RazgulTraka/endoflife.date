@@ -20,7 +20,7 @@ releases:
     eol: 
     discontinued:
 
--   releaseCycle: 
+-   releaseCycle: Cisco 6000 Series DSL Access Multiplexer
     link: https://www.cisco.com/c/en/us/products/collateral/switches/6000-series-ip-dsl-switches/prod_end-of-life_notice0900aecd80272b2e.html
     support: 2008-03-31
     eol: 2011-03-31
