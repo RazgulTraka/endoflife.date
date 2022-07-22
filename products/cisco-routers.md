@@ -2,9 +2,9 @@
 title: Cisco Routers
 permalink: /cisco-routers
 alternate_urls:
-- /cisco-router
-- /cisco-rt
-layout: post
+-   /cisco-router
+-   /cisco-rt
+
 category: device
 iconSlug: cisco
 releasePolicyLink: https://www.cisco.com/c/en/us/products/eos-eol-listing.html
