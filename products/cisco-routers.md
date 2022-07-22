@@ -12,8 +12,8 @@ releaseDateColumn: true
 discontinuedColumn: true
 sortReleasesBy: eol
 releaseColumn: false
-eolColumn: End of SW Maintenance
-supportColumn: Last Date of Support
+supportColumn: End of SW Maintenance
+eolColumn: Last Date of Support
 releases:
 -   releaseCycle: Cisco 12000 Series Routers
     support: 2012-07-31
