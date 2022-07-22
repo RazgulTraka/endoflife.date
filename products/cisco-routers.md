@@ -7,8 +7,6 @@ alternate_urls:
 category: device
 iconSlug: cisco
 releasePolicyLink: https://www.cisco.com/c/en/us/products/eos-eol-listing.html
-activeSupportColumn: true
-releaseDateColumn: true
 discontinuedColumn: true
 sortReleasesBy: eol
 releaseColumn: false
@@ -18,6 +16,11 @@ releases:
 -   releaseCycle: Cisco 12000 Series Routers
     support: 2012-07-31
     eol: 2013-11-31
+    discontinued: true
+    
+-   releaseCycle : Cisco 7301 Router
+    support: 2015-09-29
+    eol: 2017-09-30
     discontinued: true
     
 ---
