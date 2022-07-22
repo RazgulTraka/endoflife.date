@@ -16,8 +16,8 @@ eolColumn: End of SW Maintenance
 supportColumn: Last Date of Support
 releases:
 -   releaseCycle: Cisco 12000 Series Routers
-    support: 2013-11-31
-    eol: 2012-07-31
+    support: 2012-07-31
+    eol: 2013-11-31
     discontinued: true
     
 ---
