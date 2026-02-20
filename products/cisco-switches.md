@@ -39,21 +39,21 @@ releases:
     eol: 2025-04-30
     discontinued: 2030-04-30
     
--   releaseCycle: catalyst-2960-L-series
+-   releaseCycle: catalyst-2960-l-series
     releaseLabel: Cisco Catalyst 2960-L Series Switches
     link: https://www.cisco.com/c/en/us/support/switches/catalyst-2960-l-series-switches/series.html	
     releaseDate: 2016-08-23
     eol: 2021-10-31
     discontinued: 2026-10-31
     
--   releaseCycle: catalyst-2960-CX-series
+-   releaseCycle: catalyst-2960-cx-series
     releaseLabel: Cisco Catalyst 2960-CX Series Switches
     link: https://www.cisco.com/c/en/us/support/switches/catalyst-2960-cx-series-switches/series.html
     releaseDate: 2014-12-01
     eol: 2024-04-30
     discontinued: 2029-04-30
     
--   releaseCycle: catalyst-2960-C-series
+-   releaseCycle: catalyst-2960-c-series
     releaseLabel: Cisco Catalyst 2960-C Series Switches
     link: https://www.cisco.com/c/en/us/support/switches/catalyst-2960-c-series-switches/series.html
     releaseDate: 2011-01-07
