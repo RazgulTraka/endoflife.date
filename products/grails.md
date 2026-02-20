@@ -1,0 +1,89 @@
+---
+title: Apache Grails Framework
+addedAt: 2022-12-01
+category: framework
+tags: java-runtime
+permalink: /grails
+alternate_urls:
+  - /grails-framework
+  - /apache-grails
+releasePolicyLink: https://grails.apache.org/support.html
+changelogTemplate: "https://github.com/apache/grails-core/releases/tag/v__LATEST__"
+eoasColumn: Active Development
+eolColumn: Active Maintenance
+
+identifiers:
+  - cpe: cpe:/a:apache:grails
+  - cpe: cpe:2.3:a:apache:grails
+  - purl: pkg:maven/org.apache.grails/grails
+  - cpe: cpe:/a:grails:grails
+  - cpe: cpe:2.3:a:grails:grails
+
+auto:
+  methods:
+    - git: https://github.com/apache/grails-core.git
+
+releases:
+  - releaseCycle: "7"
+    releaseDate: 2025-10-19
+    eoas: false
+    eol: false
+    latest: "7.0.7"
+    latestReleaseDate: 2026-01-29
+
+  - releaseCycle: "6"
+    releaseDate: 2023-07-24
+    eoas: 2025-01-03
+    eol: 2025-10-19
+    latest: "6.2.3"
+    latestReleaseDate: 2025-01-03
+
+  - releaseCycle: "5"
+    releaseDate: 2021-10-12
+    eoas: 2023-07-24
+    eol: 2025-01-09 # more than 1 year without update, and not listed on https://grails.apache.org/download.html anymore
+    latest: "5.3.6"
+    latestReleaseDate: 2024-01-09
+
+  - releaseCycle: "4"
+    releaseDate: 2019-07-11
+    eoas: true
+    eol: 2023-03-31
+    latest: "4.1.4"
+    latestReleaseDate: 2024-03-08
+
+  - releaseCycle: "3"
+    releaseDate: 2015-03-31
+    eoas: true
+    eol: 2021-09-30
+    latest: "3.3.18"
+    latestReleaseDate: 2024-01-09
+
+  - releaseCycle: "2"
+    releaseDate: 2011-12-15
+    eoas: true
+    eol: 2021-06-30
+    latest: "2.6.1"
+    latestReleaseDate: 2022-06-07
+
+  - releaseCycle: "1"
+    releaseDate: 2009-05-14
+    eoas: true
+    eol: 2012-05-01
+    latest: "1.3.9"
+    latestReleaseDate: 2015-01-16
+
+---
+
+> [Apache Grails](https://grails.apache.org/) is a powerful [Apache Groovy](https://groovy-lang.org/)-based web application framework for the JVM
+> built on top of Spring Boot.
+
+## Support
+
+- **Active Development**: These versions get regular updates, including new features, performance
+  enhancements, and bug fixes. Recommended for new and existing Grails applications.
+- **Active Maintenance**: These versions receive limited bug fixes and patches, mostly focused
+  around the resolution of critical security advisories. New features, performance improvements,
+  and minor bug fixes are unlikely.
+
+There are a few companies that offer [commercial support](https://grails.apache.org/support.html).

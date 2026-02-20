@@ -1,260 +1,305 @@
 ---
 title: FFmpeg
-permalink: /ffmpeg
+addedAt: 2022-01-23
 category: framework
-icon: FFmpeg
-releasePolicyLink: https://ffmpeg.org/
+iconSlug: ffmpeg
+permalink: /ffmpeg
 versionCommand: ffmpeg -version
-activeSupportColumn: false
-releaseDateColumn: true
-eolColumn: Supported
-sortReleasesBy: cycleShortHand
-auto:
-  # upstream https://git.ffmpeg.org/ffmpeg.git doesn't support filtering
--   git: https://github.com/FFmpeg/FFmpeg.git
-    regex: '^n?(?<major>[1-9]\d*)\.(?<minor>0|[1-9]\d*)\.?(?<patch>0|[1-9]\d*)?$'
+releasePolicyLink: https://ffmpeg.org/
+changelogTemplate: https://ffmpeg.org/download.html#release_{{"__RELEASE_CYCLE__"}}
 releaseLabel: "__RELEASE_CYCLE__ '__CODENAME__'"
+eolColumn: Supported
+
+identifiers:
+  - repology: ffmpeg
+  - cpe: cpe:/a:ffmpeg:ffmpeg
+  - cpe: cpe:2.3:a:ffmpeg:ffmpeg
+
+auto:
+  methods:
+    # upstream https://git.ffmpeg.org/ffmpeg.git doesn't support filtering
+    - git: https://github.com/FFmpeg/FFmpeg.git
+      regex: '^n?(?P<major>[1-9]\d*)\.(?P<minor>\d+)\.?(?P<patch>\d+)?$'
+
+# EOL date can be found on https://ffmpeg.org/olddownload.html
+# LTS: every ODD.1 release is LTS from https://news.ycombinator.com/item?id=41695542
 releases:
--   releaseCycle: "5.0"
-    cycleShortHand: 50
-    codename: Lorentz
+  - releaseCycle: "8.0"
+    codename: Huffman
+    releaseDate: 2025-08-22
     eol: false
-    latest: "5.0.1"
+    latest: "8.0.1"
+    latestReleaseDate: 2025-11-20
+
+  - releaseCycle: "7.1"
+    codename: Péter
     lts: true
-    link: https://ffmpeg.org/download.html#release_5.0
-    latestReleaseDate: 2022-04-04
+    releaseDate: 2024-09-30
+    eol: false
+    latest: "7.1.3"
+    latestReleaseDate: 2025-11-21
+
+  - releaseCycle: "7.0"
+    codename: Dijkstra
+    releaseDate: 2024-04-05
+    eol: false
+    latest: "7.0.3"
+    latestReleaseDate: 2025-08-05
+
+  - releaseCycle: "6.1"
+    codename: Heaviside
+    releaseDate: 2023-11-11
+    eol: false
+    latest: "6.1.4"
+    latestReleaseDate: 2025-11-23
+
+  - releaseCycle: "6.0"
+    codename: Von Neumann
+    releaseDate: 2023-02-27
+    eol: 2024-07-11 # eol of Ubuntu 23.10 http://git.ffmpeg.org/gitweb/ffmpeg-web.git/commitdiff/ebe787e5276b54a585f69ed76b0d7cce8265374d
+    latest: "6.0.1"
+    latestReleaseDate: 2023-11-10
+
+  - releaseCycle: "5.1"
+    codename: Riemann
+    lts: true
+    releaseDate: 2022-07-22
+    eol: false
+    latest: "5.1.8"
+    latestReleaseDate: 2025-11-26
+
+  - releaseCycle: "5.0"
+    codename: Lorentz
     releaseDate: 2022-01-14
--   releaseCycle: "4.4"
-    cycleShortHand: 44
+    eol: 2023-04-02
+    latest: "5.0.3"
+    latestReleaseDate: 2023-04-02
+
+  - releaseCycle: "4.4"
     codename: Rao
-    eol: false
-    latest: "4.4.2"
-    link: https://ffmpeg.org/download.html#release_4.4
-    latestReleaseDate: 2022-04-14
     releaseDate: 2021-04-08
--   releaseCycle: "4.3"
-    cycleShortHand: 43
-    codename: '4:3'
     eol: false
-    latest: "4.3.4"
-    link: https://ffmpeg.org/download.html#release_4.3
-    latestReleaseDate: 2022-04-16
+    latest: "4.4.6"
+    latestReleaseDate: 2025-05-17
+
+  - releaseCycle: "4.3"
+    codename: "4:3"
     releaseDate: 2020-06-15
--   releaseCycle: "4.2"
-    cycleShortHand: 42
-    codename: 'Ada'
     eol: false
-    latest: "4.2.7"
-    link: https://ffmpeg.org/download.html#release_4.2
-    latestReleaseDate: 2022-05-14
+    latest: "4.3.9"
+    latestReleaseDate: 2025-03-12
+
+  - releaseCycle: "4.2"
+    codename: "Ada"
     releaseDate: 2019-08-05
--   releaseCycle: "4.1"
-    cycleShortHand: 41
-    codename: 'al-Khwarizmi'
     eol: false
-    latest: "4.1.9"
-    link: https://ffmpeg.org/download.html#release_4.1
-    latestReleaseDate: 2022-04-17
+    latest: "4.2.11"
+    latestReleaseDate: 2025-05-17
+
+  - releaseCycle: "4.1"
+    codename: "al-Khwarizmi"
     releaseDate: 2018-11-06
--   releaseCycle: "4.0"
-    cycleShortHand: 40
-    codename: 'Wu'
+    eol: 2024-07-21 # http://git.ffmpeg.org/gitweb/ffmpeg-web.git/commitdiff/49be47948400e33b16a14fc7a198f4636c5d229e
+    latest: "4.1.11"
+    latestReleaseDate: 2023-06-07
+
+  - releaseCycle: "4.0"
+    codename: "Wu"
+    releaseDate: 2018-04-20
     eol: 2020-07-03
     latest: "4.0.6"
-    link: https://ffmpeg.org/olddownload.html#release_4.0
     latestReleaseDate: 2020-07-03
-    releaseDate: 2018-04-20
--   releaseCycle: "3.4"
-    cycleShortHand: 34
-    codename: 'Cantor'
-    eol: false
-    latest: "3.4.11"
-    link: https://ffmpeg.org/download.html#release_3.4
-    latestReleaseDate: 2022-05-14
+
+  - releaseCycle: "3.4"
+    codename: "Cantor"
     releaseDate: 2017-10-15
--   releaseCycle: "3.3"
-    cycleShortHand: 33
-    codename: 'Hilbert'
+    eol: false
+    latest: "3.4.14"
+    latestReleaseDate: 2025-03-12
+
+  - releaseCycle: "3.3"
+    codename: "Hilbert"
+    releaseDate: 2017-04-13
     eol: 2018-11-18
     latest: "3.3.9"
-    link: https://ffmpeg.org/olddownload.html#release_3.3
     latestReleaseDate: 2018-11-18
-    releaseDate: 2017-04-13
--   releaseCycle: "3.2"
-    cycleShortHand: 32
-    codename: 'Hypatia'
-    eol: false
-    latest: "3.2.18"
-    link: https://ffmpeg.org/download.html#release_3.2
-    latestReleaseDate: 2022-05-14
+
+  - releaseCycle: "3.2"
+    codename: "Hypatia"
     releaseDate: 2016-10-27
--   releaseCycle: "3.1"
-    cycleShortHand: 31
-    codename: 'Laplace'
+    eol: 2022-10-28
+    latest: "3.2.19"
+    latestReleaseDate: 2022-10-28
+
+  - releaseCycle: "3.1"
+    codename: "Laplace"
+    releaseDate: 2016-06-27
     eol: 2017-09-25
     latest: "3.1.11"
-    link: https://ffmpeg.org/olddownload.html#release_3.1
     latestReleaseDate: 2017-09-25
-    releaseDate: 2016-06-27
--   releaseCycle: "3.0"
-    cycleShortHand: 30
-    codename: 'Einstein'
+
+  - releaseCycle: "3.0"
+    codename: "Einstein"
+    releaseDate: 2016-02-15
     eol: 2018-10-28
     latest: "3.0.12"
-    link: https://ffmpeg.org/olddownload.html#release_3.0
     latestReleaseDate: 2018-10-28
-    releaseDate: 2016-02-15
--   releaseCycle: "2.8"
-    cycleShortHand: 28
-    codename: 'Feynman'
-    eol: false
-    latest: "2.8.20"
-    link: https://ffmpeg.org/download.html#release_2.8
-    latestReleaseDate: 2022-05-15
+
+  - releaseCycle: "2.8"
+    codename: "Feynman"
+    staleReleaseThresholdDays: 1000 # still listed on https://ffmpeg.org/download.html
     releaseDate: 2015-09-09
--   releaseCycle: "2.7"
-    cycleShortHand: 27
-    codename: 'Nash'
+    eol: false
+    latest: "2.8.22"
+    latestReleaseDate: 2023-10-29
+
+  - releaseCycle: "2.7"
+    codename: "Nash"
+    releaseDate: 2015-06-10
     eol: 2016-04-30
     latest: "2.7.7"
-    link: https://ffmpeg.org/olddownload.html#release_2.7
     latestReleaseDate: 2016-04-30
-    releaseDate: 2015-06-10
--   releaseCycle: "2.6"
-    cycleShortHand: 26
-    codename: 'Grothendieck'
+
+  - releaseCycle: "2.6"
+    codename: "Grothendieck"
+    releaseDate: 2015-03-07
     eol: 2016-05-03
     latest: "2.6.9"
-    link: https://ffmpeg.org/olddownload.html#release_2.6
     latestReleaseDate: 2016-05-03
-    releaseDate: 2015-03-07
--   releaseCycle: "2.5"
-    cycleShortHand: 25
-    codename: 'Bohr'
+
+  - releaseCycle: "2.5"
+    codename: "Bohr"
+    releaseDate: 2014-12-04
     eol: 2016-02-02
     latest: "2.5.11"
-    link: https://ffmpeg.org/olddownload.html#release_2.5
     latestReleaseDate: 2016-02-02
-    releaseDate: 2014-12-04
--   releaseCycle: "2.4"
-    cycleShortHand: 24
-    codename: 'Fresnel'
+
+  - releaseCycle: "2.4"
+    codename: "Fresnel"
+    releaseDate: 2014-09-14
     eol: 2017-12-31
     latest: "2.4.14"
-    link: https://ffmpeg.org/olddownload.html#release_2.4
     latestReleaseDate: 2017-12-31
-    releaseDate: 2014-09-14
--   releaseCycle: "2.3"
-    cycleShortHand: 23
-    codename: 'Mandelbrot'
+
+  - releaseCycle: "2.3"
+    codename: "Mandelbrot"
+    releaseDate: 2014-07-16
     eol: 2015-01-06
     latest: "2.3.6"
-    link: https://ffmpeg.org/olddownload.html#release_2.3
     latestReleaseDate: 2015-01-06
-    releaseDate: 2014-07-16
--   releaseCycle: "2.2"
-    cycleShortHand: 22
-    codename: 'Muybridge'
+
+  - releaseCycle: "2.2"
+    codename: "Muybridge"
+    releaseDate: 2014-03-23
     eol: 2015-06-18
     latest: "2.2.16"
-    link: https://ffmpeg.org/olddownload.html#release_2.2
     latestReleaseDate: 2015-06-18
-    releaseDate: 2014-03-23
--   releaseCycle: "2.1"
-    cycleShortHand: 21
-    codename: 'Fourier'
+
+  - releaseCycle: "2.1"
+    codename: "Fourier"
+    releaseDate: 2013-10-28
     eol: 2015-04-30
     latest: "2.1.8"
-    link: https://ffmpeg.org/olddownload.html#release_2.1
     latestReleaseDate: 2015-04-30
-    releaseDate: 2013-10-28
--   releaseCycle: "2.0"
-    cycleShortHand: 20
-    codename: 'Nameless'
+
+  - releaseCycle: "2.0"
+    codename: "Nameless"
+    releaseDate: 2013-07-10
     eol: 2015-06-10
     latest: "2.0.7"
-    link: https://ffmpeg.org/olddownload.html#release_2.0
     latestReleaseDate: 2015-06-10
-    releaseDate: 2013-07-10
--   releaseCycle: "1.2"
-    cycleShortHand: 12
-    codename: 'Magic'
+
+  - releaseCycle: "1.2"
+    codename: "Magic"
+    releaseDate: 2013-03-15
     eol: 2015-02-12
     latest: "1.2.12"
-    link: https://ffmpeg.org/olddownload.html#release_1.2
     latestReleaseDate: 2015-02-12
-    releaseDate: 2013-03-15
--   releaseCycle: "1.1"
-    cycleShortHand: 11
-    codename: 'Fire Flower'
+
+  - releaseCycle: "1.1"
+    codename: "Fire Flower"
+    releaseDate: 2013-01-06
     eol: 2015-03-13
     latest: "1.1.16"
-    link: https://ffmpeg.org/olddownload.html#release_1.1
     latestReleaseDate: 2015-03-13
-    releaseDate: 2013-01-06
--   releaseCycle: "1.0"
-    cycleShortHand: 10
-    codename: 'Angel'
+
+  - releaseCycle: "1.0"
+    codename: "Angel"
+    releaseDate: 2012-09-28
     eol: 2014-07-20
     latest: "1.0.10"
-    link: https://ffmpeg.org/olddownload.html#release_1.0
     latestReleaseDate: 2014-07-20
-    releaseDate: 2012-09-28
--   releaseCycle: "0.11"
-    cycleShortHand: 011
-    codename: 'Happiness'
+
+  - releaseCycle: "0.11"
+    codename: "Happiness"
+    releaseDate: 2012-05-25
     eol: 2014-03-10
     latest: "0.11.5"
-    link: https://ffmpeg.org/olddownload.html#release_0.11
-    releaseDate: 2012-05-25
--   releaseCycle: "0.10"
-    cycleShortHand: 010
-    codename: 'Freedom'
+    latestReleaseDate: 2014-03-10
+
+  - releaseCycle: "0.10"
+    codename: "Freedom"
+    releaseDate: 2012-01-26
     eol: 2015-03-12
     latest: "0.10.16"
-    link: https://ffmpeg.org/olddownload.html#release_0.10
-    releaseDate: 2012-01-26
--   releaseCycle: "0.9"
-    cycleShortHand: 09
-    codename: 'Harmony'
+    latestReleaseDate: 2015-03-12
+
+  - releaseCycle: "0.9"
+    codename: "Harmony"
+    releaseDate: 2011-12-11
     eol: 2014-03-21
     latest: "0.9.4"
-    link: https://ffmpeg.org/olddownload.html#release_0.9
-    releaseDate: 2011-12-11
--   releaseCycle: "0.8"
-    cycleShortHand: 08
-    codename: 'Love'
+    latestReleaseDate: 2014-03-21
+
+  - releaseCycle: "0.8"
+    codename: "Love"
+    releaseDate: 2011-06-21
     eol: 2013-10-06
     latest: "0.8.15"
-    link: https://ffmpeg.org/olddownload.html#release_0.8
+    latestReleaseDate: 2013-10-06
+
+  - releaseCycle: "0.7"
+    codename: "Peace"
     releaseDate: 2011-06-21
--   releaseCycle: "0.7"
-    cycleShortHand: 07
-    codename: 'Peace'
     eol: 2015-03-12
     latest: "0.7.17"
-    link: https://ffmpeg.org/olddownload.html#release_0.7
-    releaseDate: 2011-06-21
--   releaseCycle: "0.6"
-    cycleShortHand: 06
-    codename: 'Works with HTML5'
+    latestReleaseDate: 2015-03-12
+
+  - releaseCycle: "0.6"
+    codename: "Works with HTML5"
+    releaseDate: 2010-05-04
     eol: 2013-09-23
     latest: "0.6.7"
-    link: https://ffmpeg.org/olddownload.html#release_0.6
-    releaseDate: 2010-05-04
--   releaseCycle: "0.5"
-    cycleShortHand: 05
-    codename: 'half-way to world domination A.K.A. the belligerent blue bike shed'
+    latestReleaseDate: 2013-09-23
+
+  - releaseCycle: "0.5"
+    codename: "half-way to world domination A.K.A. the belligerent blue bike shed"
+    releaseDate: 2009-03-02
     eol: 2014-11-29
     latest: "0.5.15"
-    link: https://ffmpeg.org/olddownload.html#release_0.5
-    releaseDate: 2009-03-02
+    latestReleaseDate: 2014-11-29
 
 ---
 
-> [FFmpeg](https://ffmpeg.org/) is a free and open-source software project consisting of a suite of libraries and programs for handling video, audio, and other multimedia files and streams. It is the core of software such as VLC, MPV, Blender, Audacity, HandBrake, OBS Studio, and much more. Full list of capabilities are found [in their documentation](https://ffmpeg.org/ffmpeg.html).
+> [FFmpeg](https://ffmpeg.org/) is a free and open-source software project consisting of a suite of
+> libraries and programs for handling video, audio, and other multimedia files and streams. It is
+> the core of software such as VLC, MPV, Blender, Audacity, HandBrake, OBS Studio, and much more.
+> Full list of capabilities is found [in their documentation](https://ffmpeg.org/documentation.html).
 
+FFmpeg follows [Semantic Versioning](https://semver.org/). The support and EOL policy is not clearly
+defined but, looking at the release history, there is at least a `x.y` release every year which is
+supported for at least a year with important bug fixes.
 
-## Releases
+## Long-Term Support
 
-Starting with the first LTS release FFmpeg 5.0 "Lorentz", FFmpeg is releasing one major release per year, and a LTS every other year.  Note that these releases are intended for distributors and system integrators, not for end users. End users are usually encouraged to use the [latest git snapshots instead](https://ffmpeg.org/download.html).
+While several past FFmpeg releases have enjoyed long-term support, 5.1 is the first release where
+such an intention is made clear at release. [As per the developers](https://news.ycombinator.com/item?id=41695542),
+the first minor version of every Odd Major version (ODD.1) is planned to be an LTS. Each LTS release is maintained
+for a minimum of 3 years.
+
+Note that these releases are intended for distributors and system integrators, not for end users.
+Users that wish to compile from the sources are strongly encouraged to consider using [the
+development branch](https://ffmpeg.org/download.html).
+
+Maintained releases are listed on the [_Download Page_](https://ffmpeg.org/download.html#releases)
+and unmaintained releases are listed on the [_Old Releases Page_](https://ffmpeg.org/olddownload.html).

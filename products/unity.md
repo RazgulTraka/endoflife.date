@@ -1,72 +1,150 @@
 ---
-permalink: /unity
 title: Unity
-alternate_urls:
--   /unity3d
-releasePolicyLink: https://unity3d.com/unity/qa/lts-releases
-releaseDateColumn: true
-releaseColumn: true
+addedAt: 2021-08-15
+category: app
 iconSlug: unity
-changelogTemplate: |
-  https://unity3d.com/unity/whats-new/__LATEST__
-releaseImage: https://blog-api.unity.com/sites/default/files/2022-04/Unity-2021-LTS-Timeline.jpg
-sortReleasesBy: releaseDate
+permalink: /unity
+alternate_urls:
+  - /unity3d
+releasePolicyLink: https://unity.com/releases/unity-6/support
+changelogTemplate: "https://unity.com/releases/editor/whats-new/{{'__LATEST__'|split:'f'|first}}#release-notes"
+eoesColumn: Extended Long Term Support
+
+auto:
+  methods:
+    - unity: https://services.api.unity.com/unity/editor/release/v1/releases
+
+# For update release : eol(x) = releaseDate(x+1)
+# For LTS : eol(x) = releaseDate + 2 years
 releases:
-#  - releaseCycle: "2022.2"
-#    release: 2022-XX-XX
-#    eol: false
-#    latest: "2022.2.0"
+  - releaseCycle: "6000.3"
+    releaseLabel: "6.3"
+    lts: true
+    releaseDate: 2025-12-04
+    eol: 2027-12-04
+    eoes: 2028-12-04
+    latest: "6000.3.9f1"
+    latestReleaseDate: 2026-02-18
 
--   releaseCycle: "2022.1"
-    eol: false
-    latest: "2022.1.0"
+  - releaseCycle: "6000.2"
+    releaseLabel: "6.2"
+    releaseDate: 2025-08-12
+    eol: 2025-12-04
+    latest: "6000.2.15f1"
+    latestReleaseDate: 2025-12-03
 
+  - releaseCycle: "6000.1"
+    releaseLabel: "6.1"
+    releaseDate: 2025-04-23
+    eol: 2025-08-12
+    latest: "6000.1.17f1"
+    latestReleaseDate: 2025-10-03
+
+  - releaseCycle: "6000.0"
+    releaseLabel: "6.0"
+    releaseDate: 2024-04-29
+    lts: 2024-10-16
+    eol: 2026-10-16
+    eoes: 2027-10-16
+    latest: "6000.0.68f1"
+    latestReleaseDate: 2026-02-18
+
+  - releaseCycle: "2023.2"
+    releaseDate: 2023-11-14
+    eol: 2024-04-29
+    latest: "2023.2.22f1"
+    latestReleaseDate: 2025-10-03
+
+  - releaseCycle: "2023.1"
+    releaseDate: 2023-06-12
+    eol: 2023-11-13
+    latest: "2023.1.22f1"
+    latestReleaseDate: 2025-10-03
+
+  - releaseCycle: "2022.3"
+    lts: true
+    releaseDate: 2023-05-30
+    eol: 2025-05-07
+    latest: "2022.3.62f3"
+    latestReleaseDate: 2025-10-28
+
+  - releaseCycle: "2022.2"
+    releaseDate: 2022-12-07
+    eol: 2023-06-12
+    latest: "2022.2.23f1"
+    latestReleaseDate: 2025-10-03
+
+  - releaseCycle: "2022.1"
     releaseDate: 2022-05-09
--   releaseCycle: "2021"
-    eol: 2024-04-19
-    lts: true
-    latest: "2021.3.2"
+    eol: 2022-12-06
+    latest: "2022.1.25f1"
+    latestReleaseDate: 2025-10-03
 
-    releaseDate: 2021-03-19
--   releaseCycle: "2020"
-    eol: 2023-03-01
+  - releaseCycle: "2021"
     lts: true
-    latest: "2020.3.34"
+    releaseDate: 2022-04-11
+    eol: 2025-02-18
+    latest: "2021.3.45f2"
+    latestReleaseDate: 2025-10-03
 
-    releaseDate: 2021-03-11
--   releaseCycle: "2019"
-    eol: 2022-06-01
+  - releaseCycle: "2021.3"
+    releaseDate: 2022-04-11
+    eol: 2025-02-18
+    latest: "2021.3.45f2"
+    latestReleaseDate: 2025-10-03
+
+  - releaseCycle: "2021.2"
+    releaseDate: 2021-10-25
+    eol: 2022-04-05
+    latest: "2021.2.20f1"
+    latestReleaseDate: 2025-10-03
+
+  - releaseCycle: "2021.1"
+    releaseDate: 2021-03-22
+    eol: 2022-11-04
+    latest: "2021.1.29f1"
+    latestReleaseDate: 2025-10-03
+
+  - releaseCycle: "2020"
     lts: true
-    latest: "2019.4.39"
+    releaseDate: 2020-07-20
+    eol: 2023-05-05
+    latest: "2020.3.49f1"
+    latestReleaseDate: 2025-10-03
 
-    releaseDate: 2020-06-09
--   releaseCycle: "2018"
-    eol: 2021-06-18
+  - releaseCycle: "2019"
     lts: true
-    latest: "2018.4.36"
+    releaseDate: 2019-04-08
+    eol: 2022-06-16
+    latest: "2019.4.41f2"
+    latestReleaseDate: 2025-10-15
 
-    releaseDate: 2019-05-10
--   releaseCycle: "2017"
-    eol: 2020-04-20
+  - releaseCycle: "2018"
     lts: true
-    latest: "2017.4.40"
+    releaseDate: 2018-04-26
+    eol: 2021-06-17
+    latest: "2018.4.36f1"
+    latestReleaseDate: 2021-06-17
 
-    releaseDate: 2017-03-20
+  - releaseCycle: "2017"
+    lts: true
+    releaseDate: 2017-06-26
+    eol: 2020-05-18
+    latest: "2017.4.40f1"
+    latestReleaseDate: 2020-05-18
 
 ---
 
-> [Unity](https://unity.com/) is a cross-platform game engine developed by Unity Technologies, first announced and released in June 2005. The engine can be used to create three-dimensional (3D) and two-dimensional (2D) games, as well as interactive simulations and other experiences.
+> [Unity](https://unity.com/) is a cross-platform game engine developed by Unity Technologies,
+> first announced and released in June 2005. The engine can be used to create three-dimensional (3D)
+> and two-dimensional (2D) games, as well as interactive simulations and other experiences.
 
-Unity has two releases: Tech stream and LTS.
+Starting with Unity 6, there are two kinds of releases: _update releases_ and _long-term support_ (LTS) releases.
+Both kinds of releases undergo the same rigorous quality assurance and stability testing.
 
-*Tech stream* releases are released twice a year (each one receiving weekly updates), and are supported only until the next tech stream release is out.
+There are multiple _update releases_ per year.
+They are supported with bug fixes and critical platform updates until the next release (update or LTS) is published.
 
-*Unity LTS releases* are released once a year and are based off the previous tech stream branch. LTS releases offer two years of bi-weekly updates, then an additional year of monthly updates.
-
-Officially supported platforms as of Unity 2020 LTS are:
-
-- Mobile: iOS, Android (Android TV), tvOS
-- Desktop: Windows (Universal Windows Platform), Mac, Linux
-- Web: WebGL
-- Consoles: PlayStation (PS4, PS5), Xbox (Xbox One, Xbox Series X/S), Nintendo Switch, Stadia
-- Virtual/Extended reality: Oculus, PlayStation VR, Google's ARCore, Apple's ARKit, Windows Mixed Reality (HoloLens), Magic Leap, and via Unity XR SDK Steam VR, Google Cardboard.
+LTS releases are published once a year.
+They are supported for two years with bug fixes and critical platform updates.
+Unity Enterprise and Unity Industry users benefit from an additional year of support for LTS releases.

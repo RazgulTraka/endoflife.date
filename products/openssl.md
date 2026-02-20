@@ -1,49 +1,158 @@
 ---
 title: OpenSSL
+addedAt: 2022-05-10
 category: framework
 iconSlug: openssl
 permalink: /openssl
-releasePolicyLink: https://www.openssl.org/policies/releasestrat.html
-changelogTemplate: |
-  https://www.openssl.org/news/changelog.html#openssl-{{"__RELEASE_CYCLE__" | replace:'.',''}}
-eolColumn: Supported
-activeSupportColumn: false
 versionCommand: openssl version
-releaseDateColumn: true
-sortReleasesBy: releaseCycle
+releasePolicyLink: https://openssl-library.org/policies/releasestrat/index.html
+changelogTemplate: https://openssl-library.org/news/openssl-__RELEASE_CYCLE__-notes/index.html
+eolColumn: Supported
+eoesColumn: Premium support
+
+identifiers:
+  - repology: openssl
+  - cpe: cpe:/a:openssl:openssl
+  - cpe: cpe:2.3:a:openssl:openssl
+
+auto:
+  methods:
+    - git: https://github.com/openssl/openssl.git
+      regex: '^[o|O]pen[s|S][s|S][l|L][-|_](?P<major>\d+)[\.|_](?P<minor>\d+)[\.|_](?P<patch>\d+\w{0,2})?$'
+    - release_table: https://openssl-library.org/source/index.html
+      fields:
+        releaseCycle:
+          column: "Series"
+          regex: '^(?P<value>\d+\.\d+).*$'
+        #releaseDate: "Release" # release dates are wrong
+        eol: "End-of-Life"
+
+# EOL dates and LTS infos on https://www.openssl.org/policies/releasestrat.html
+# Starting with 3.5, product plans to designate an LTS every two years.
+# In essence that means an LTS will be released every April in odd-numbered years
+# Non-LTS releases after 3.5 will be full supported for 13 months
 releases:
--   releaseCycle: "3.0"
-    eol: 2026-09-07
-    latest: "3.0.5"
+  - releaseCycle: "3.6"
+    releaseDate: 2025-10-01
+    eol: 2026-11-01
+    latest: "3.6.1"
+    latestReleaseDate: 2026-01-27
+    link: https://github.com/openssl/openssl/blob/master/CHANGES.md#openssl-36
+
+  - releaseCycle: "3.5"
+    lts: true
+    releaseDate: 2025-04-08
+    eol: 2030-04-08 # documented on https://openssl-library.org/source/
+    latest: "3.5.5"
+    latestReleaseDate: 2026-01-27
+    link: https://github.com/openssl/openssl/blob/master/CHANGES.md#openssl-35
+
+  - releaseCycle: "3.4"
+    releaseDate: 2024-10-22
+    eol: 2026-10-22
+    latest: "3.4.4"
+    latestReleaseDate: 2026-01-27
+
+  - releaseCycle: "3.3"
+    releaseDate: 2024-04-09
+    eol: 2026-04-09
+    latest: "3.3.6"
+    latestReleaseDate: 2026-01-27
+
+  - releaseCycle: "3.2"
+    releaseDate: 2023-11-23
+    eol: 2025-11-23
+    latest: "3.2.6"
+    latestReleaseDate: 2025-09-30
+
+  - releaseCycle: "3.1"
+    releaseDate: 2023-03-14
+    eol: 2025-03-14
+    latest: "3.1.8"
+    latestReleaseDate: 2025-02-11
+
+  - releaseCycle: "3.0"
     lts: true
     releaseDate: 2021-09-07
--   releaseCycle: "1.1.1"
-    eol: 2023-09-11
-    latest: "1.1.1q"
+    eol: 2026-09-07
+    eoes: false
+    latest: "3.0.19"
+    latestReleaseDate: 2026-01-27
+
+  - releaseCycle: "1.1.1"
     lts: true
     releaseDate: 2018-09-11
--   releaseCycle: "1.1.0"
+    eol: 2023-09-11
+    eoes: false
+    latest: "1.1.1w"
+    latestReleaseDate: 2023-09-12
+    link: https://openssl-library.org/news/vulnerabilities-1.1.1/
+
+  - releaseCycle: "1.1.0"
+    releaseDate: 2016-08-25
     eol: 2019-09-11
     latest: "1.1.0l"
-    releaseDate: 2016-08-26
--   releaseCycle: "1.0.2"
-    eol: 2019-12-31
-    latest: "1.0.2u"
+    latestReleaseDate: 2019-09-10
+    link: https://openssl-library.org/news/vulnerabilities-1.1.0/
+
+  - releaseCycle: "1.0.2"
     lts: true
     releaseDate: 2015-01-22
+    eol: 2019-12-31
+    eoes: false
+    latest: "1.0.2u"
+    latestReleaseDate: 2019-12-20
+    link: https://openssl-library.org/news/vulnerabilities-1.0.2/
+
+  - releaseCycle: "1.0.1"
+    releaseDate: 2012-03-14
+    eol: 2016-12-31
+    latest: "1.0.1u"
+    latestReleaseDate: 2016-09-22
+    link: https://openssl-library.org/news/vulnerabilities-1.0.1/
+
+  - releaseCycle: "1.0.0"
+    releaseDate: 2010-03-29
+    eol: 2015-12-31
+    latest: "1.0.0t"
+    latestReleaseDate: 2015-12-03
+    link: https://openssl-library.org/news/vulnerabilities-1.0.0/
+
+  - releaseCycle: "0.9.8"
+    releaseDate: 2005-07-05
+    eol: 2015-12-31
+    latest: "0.9.8zh"
+    latestReleaseDate: 2015-12-03
+    link: https://openssl-library.org/news/vulnerabilities-0.9.8/
 
 ---
 
-> [OpenSSL](https://www.openssl.org/) is a software library for applications that secure communications over computer networks against eavesdropping or need to identify the party at the other end. It is widely used by Internet servers, including the majority of HTTPS websites. 
+> [OpenSSL](https://openssl-library.org/) is a software library for applications that secure
+> communications over computer networks against eavesdropping or need to identify the party at the
+> other end. It is widely used by Internet servers, including the majority of HTTPS websites.
 
-It is supported for [UNIX-like platforms](https://github.com/openssl/openssl/blob/master/NOTES-UNIX.md), [Android](https://github.com/openssl/openssl/blob/master/NOTES-ANDROID.md), [Windows](https://github.com/openssl/openssl/blob/master/NOTES-WINDOWS.md), [DOS platform with DJGPP](https://github.com/openssl/openssl/blob/master/NOTES-DJGPP.md), [OpenVMS](https://github.com/openssl/openssl/blob/master/NOTES-VMS.md), [Perl](https://github.com/openssl/openssl/blob/master/NOTES-PERL.md) and [Valgrind](https://github.com/openssl/openssl/blob/master/NOTES-PERL.md).
+It is supported for [UNIX-like platforms](https://github.com/openssl/openssl/blob/master/NOTES-UNIX.md),
+[Android](https://github.com/openssl/openssl/blob/master/NOTES-ANDROID.md),
+[Windows](https://github.com/openssl/openssl/blob/master/NOTES-WINDOWS.md),
+[DOS platform with DJGPP](https://github.com/openssl/openssl/blob/master/NOTES-DJGPP.md),
+[OpenVMS](https://github.com/openssl/openssl/blob/master/NOTES-VMS.md),
+[Perl](https://github.com/openssl/openssl/blob/master/NOTES-PERL.md) and
+[Valgrind](https://github.com/openssl/openssl/blob/master/NOTES-VALGRIND.md).
 
-LTS releases will be supported for at least five years and they will specify one at least every four years. Non-LTS releases will be supported for at least two years.
+LTS releases will be supported for at least five years, and they will specify one at least every
+four years. Non-LTS releases will be supported for at least two years.
 
-As of release 3.0.0, the OpenSSL versioning scheme is changing to a more contemporary format: MAJOR.MINOR.PATCH
+As of release 3.0.0, the OpenSSL versioning scheme is changing to a more contemporary format:
+`MAJOR.MINOR.PATCH`. With this format, API/ABI compatibility will be guaranteed for the same `MAJOR`
+version number. Previously they guaranteed API/ABI compatibility across the same `MAJOR.MINOR`
+combination.
 
-With this format, API/ABI compatibility will be guaranteed for the same MAJOR version number. Previously they guaranteed API/ABI compatibility across the same MAJOR.MINOR combination.
+- `MAJOR`: API/ABI incompatible changes will increase this number
+- `MINOR`: API/ABI compatible feature releases will change this
+- `PATCH`: Bug fix releases will increment this number. We also allow backporting of accessor
+  functions in these releases.
 
-- MAJOR: API/ABI incompatible changes will increase this number
-- MINOR: API/ABI compatible feature releases will change this
-- PATCH: Bug fix releases will increment this number. We also allow backporting of accessor functions in these releases.
+In addition to community support, the _OpenSSL Software Services_ provide commercial extended
+support through the [Premium Enterprise Level Support contract](https://openssl-corporation.org/support/#premium).
+With this contract, LTS releases remain supported beyond the public EOL date for as long as it
+remains commercially viable for OpenSSL Software Services.

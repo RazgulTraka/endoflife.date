@@ -1,64 +1,103 @@
 ---
 title: Kotlin
+addedAt: 2021-11-17
 category: lang
+tags: jetbrains
 iconSlug: kotlin
 permalink: /kotlin
 alternate_urls:
--   /kotlinlang
+  - /kotlinlang
 versionCommand: kotlinc-native -version
-releasePolicyLink: https://kotlinlang.org/docs/releases.html
-sortReleasesBy: "cycleShortHand"
+releasePolicyLink: https://kotlinlang.org/docs/security.html
 changelogTemplate: "https://github.com/JetBrains/kotlin/releases/tag/v__LATEST__"
-auto:
--   git: https://github.com/JetBrains/kotlin.git
-    # See https://rubular.com/r/KT3q1yE8NDOoPB for regex reference
-    regex: '^v(?<major>0|[1-9]\d*)\.(?<minor>0|[1-9]\d*)\.(?<patch>0|[1-9]\d*)$'
-activeSupportColumn: false
-discontinuedColumn: false
-releaseDateColumn: true
-releaseColumn: true
 
+identifiers:
+  - repology: kotlin
+
+auto:
+  methods:
+    - github_releases: JetBrains/kotlin
+
+# EOL(N) = MAX(latestReleaseDate(N), releaseDate(N+1))
 releases:
--   releaseCycle: "1.7"
-    cycleShortHand: 107
-    eol: false #not sure about eol dates of kotlin if you find any information about this please change this part
-    support: false
-    latest: "1.7.10"
-    latestReleaseDate: 2022-07-04
-    releaseDate: 2022-06-07
--   releaseCycle: "1.6"
-    cycleShortHand: 106
-    eol: false #not sure about eol dates of kotlin if you find any information about this please change this part
-    support: false
+  - releaseCycle: "2.3"
+    releaseDate: 2025-12-16
+    eol: false
+    latest: "2.3.10"
+    latestReleaseDate: 2026-02-05
+
+  - releaseCycle: "2.2"
+    releaseDate: 2025-06-23
+    eol: 2025-12-16 # releaseDate(2.3)
+    latest: "2.2.21"
+    latestReleaseDate: 2025-10-23
+
+  - releaseCycle: "2.1"
+    releaseDate: 2024-11-27
+    eol: 2025-06-23
+    latest: "2.1.21"
+    latestReleaseDate: 2025-05-13
+
+  - releaseCycle: "2.0"
+    releaseDate: 2024-05-21
+    eol: 2024-11-27
+    latest: "2.0.21"
+    latestReleaseDate: 2024-10-10
+
+  - releaseCycle: "1.9"
+    releaseDate: 2023-07-06
+    eol: 2024-05-21
+    latest: "1.9.25"
+    latestReleaseDate: 2024-07-19
+
+  - releaseCycle: "1.8"
+    eol: 2023-07-06
+    latest: "1.8.22"
+    latestReleaseDate: 2023-06-08
+    releaseDate: 2022-12-28
+
+  - releaseCycle: "1.7"
+    eol: 2022-12-28
+    latest: "1.7.22"
+    latestReleaseDate: 2022-11-28
+    releaseDate: 2022-06-09
+
+  - releaseCycle: "1.6"
+    eol: 2022-06-09
     latest: "1.6.21"
-    latestReleaseDate: 2022-04-18
-    releaseDate: 2021-11-11
--   releaseCycle: "1.5"
-    cycleShortHand: 105
-    eol: false #not sure about eol dates of kotlin if you find any information about this please change this part
-    support: false
+    latestReleaseDate: 2022-04-20
+    releaseDate: 2021-11-15
+
+  - releaseCycle: "1.5"
+    eol: 2021-11-29
     latest: "1.5.32"
-    latestReleaseDate: 2021-11-26
+    latestReleaseDate: 2021-11-29
     releaseDate: 2021-04-26
--   releaseCycle: "1.4"
-    cycleShortHand: 104
-    eol: false #not sure about eol dates of kotlin if you find any information about this please change this part
-    support: false
+
+  - releaseCycle: "1.4"
+    eol: 2021-04-26
     latest: "1.4.32"
-    latestReleaseDate: 2021-03-25
-    releaseDate: 2020-08-13
--   releaseCycle: "1.3"
-    cycleShortHand: 103
-    eol: false #not sure about eol dates of kotlin if you find any information about this please change this part
-    support: false
+    latestReleaseDate: 2021-03-30
+    releaseDate: 2020-08-14
+
+  - releaseCycle: "1.3"
+    eol: 2020-08-14
     latest: "1.3.72"
-    latestReleaseDate: 2020-04-14
-    releaseDate: 2018-10-25
+    latestReleaseDate: 2020-04-15
+    releaseDate: 2018-10-29
 
 ---
 
-> [Kotlin](https://kotlinlang.org/) is a cross-platform, statically typed, general-purpose programming language with type inference.
-> Kotlin is designed to interoperate fully with Java, and the JVM version of Kotlin's standard library depends on the Java Class Library,
-> but type inference allows its syntax to be more concise. Kotlin mainly targets the JVM, but also compiles to JavaScript
-> (e.g., for frontend web applications using React) or native code (via LLVM); e.g., for native iOS apps sharing business logic with Android apps.
-> Language development costs are borne by JetBrains, while the Kotlin Foundation protects the Kotlin trademark.
+> [Kotlin](https://kotlinlang.org/) is a cross-platform, statically typed, general-purpose
+> programming language with type inference. Kotlin is designed to interoperate fully with Java, and
+> the JVM version of Kotlin's standard library depends on the Java Class Library, but type inference
+> allows its syntax to be more concise. Kotlin mainly targets the JVM, but also compiles to
+> JavaScript (e.g., for frontend web applications using React) or native code (via LLVM); e.g., for
+> native iOS apps sharing business logic with Android apps.
+
+Kotlin support policy [is not clearly defined](https://discuss.kotlinlang.org/t/kotlin-support-roadmap/11454).
+But usually only the latest version sees active development and [gets bug and security fixes](https://kotlinlang.org/docs/kotlin-evolution.html#dealing-with-compiler-bugs).
+
+## [API Compatibility](https://kotlinlang.org/docs/whatsnew16.html#supporting-previous-api-versions-for-a-longer-period)
+
+Development is supported for three previous API versions, along with the current stable one.

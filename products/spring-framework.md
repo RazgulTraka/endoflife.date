@@ -1,61 +1,172 @@
 ---
 title: Spring Framework
-alternate_urls:
--   /spring
+addedAt: 2021-03-10
 category: framework
-sortReleasesBy: "releaseCycle"
-changelogTemplate: "https://github.com/spring-projects/spring-framework/releases/tag/v__LATEST__"
+tags: java-runtime vmware
+iconSlug: spring
+permalink: /spring-framework
+alternate_urls:
+  - /spring
+releasePolicyLink: https://github.com/spring-projects/spring-framework/wiki/Spring-Framework-Versions
+changelogTemplate: https://github.com/spring-projects/spring-framework/releases/tag/v__LATEST__
+eolColumn: OSS support
+eoesColumn: Commercial Support
+
+customFields:
+  - name: supportedJavaVersions
+    display: api-only
+    label: JDK
+    description: Supported JDK versions
+    link: https://github.com/spring-projects/spring-framework/wiki/Spring-Framework-Versions#jdk-version-range
+  - name: supportedJakartaEEVersions
+    display: api-only
+    label: Jakarta EE
+    description: Supported Jakarta EE versions
+    link: https://github.com/spring-projects/spring-framework/wiki/Spring-Framework-Versions#jdk-version-range
+
+identifiers:
+  - purl: pkg:maven/org.springframework/spring-core
+  - purl: pkg:maven/org.springframework/spring-aop
+  - purl: pkg:maven/org.springframework/spring-beans
+  - purl: pkg:maven/org.springframework/spring-context
+  - purl: pkg:maven/org.springframework/spring-expression
+  - purl: pkg:maven/org.springframework/spring-jdbc
+  - purl: pkg:maven/org.springframework/spring-jms
+  - purl: pkg:maven/org.springframework/spring-messaging
+  - purl: pkg:maven/org.springframework/spring-orm
+  - purl: pkg:maven/org.springframework/spring-oxm
+  - purl: pkg:maven/org.springframework/spring-tx
+  - purl: pkg:maven/org.springframework/spring-web
+  - purl: pkg:maven/org.springframework/spring-webmvc
+  - purl: pkg:maven/org.springframework/spring-websocket
+
 auto:
--   git: https://github.com/spring-projects/spring-framework.git
-  # See https://rubular.com/r/XQUdQN2MHdmmCD for reference
-    regex: '^v?(?<major>[1-9]\d*)\.(?<minor>0|[1-9]\d*)\.(?<patch>0|[1-9]\d*)(\.RELEASE)?$'
+  methods:
+    - git: https://github.com/spring-projects/spring-framework.git
+      regex: '^v?(?P<major>[1-9]\d*)\.(?P<minor>\d+)\.(?P<patch>\d+)(\.RELEASE)?$'
+    - release_table: https://spring.io/projects/spring-framework#support
+      render_javascript: true
+      render_javascript_wait_until: networkidle
+      fields:
+        releaseCycle:
+          column: "Branch"
+          regex: '^(?P<value>\d+\.\d+)\.x$'
+        releaseDate: "Initial Release"
+        eol: "End of OSS Support"
+        eoes: "End Enterprise Support *"
+
+# Supported Java/Jakarta EE versions available on https://github.com/spring-projects/spring-framework/wiki/Spring-Framework-Versions#jdk-version-range.
 releases:
--   releaseCycle: "5.3"
-    eol: false
-    support: true
-    latest: "5.3.22"
-    latestReleaseDate: 2022-07-14
-    releaseDate: 2020-10-27
--   releaseCycle: "5.2"
-    eol: 2021-12-31
-    support: true
-    latest: "5.2.22"
-    latestReleaseDate: 2022-05-11
+  - releaseCycle: "7.0"
+    supportedJavaVersions: "17 - 25"
+    supportedJakartaEEVersions: "11 - 12"
+    releaseDate: 2025-11-30
+    eol: 2027-06-30
+    eoes: 2028-06-30
+    latest: "7.0.5"
+    latestReleaseDate: 2026-02-18
+
+  - releaseCycle: "6.2"
+    supportedJavaVersions: "17 - 25"
+    supportedJakartaEEVersions: "9 - 10"
+    releaseDate: 2024-11-30
+    eol: 2026-06-30
+    eoes: 2032-06-30
+    latest: "6.2.16"
+    latestReleaseDate: 2026-02-12
+
+  - releaseCycle: "6.1"
+    supportedJavaVersions: "17 - 23"
+    supportedJakartaEEVersions: "9 - 10"
+    releaseDate: 2023-11-30
+    eol: 2025-06-30
+    eoes: 2026-06-30
+    latest: "6.1.21"
+    latestReleaseDate: 2025-06-12
+
+  - releaseCycle: "6.0"
+    supportedJavaVersions: "17 - 21"
+    supportedJakartaEEVersions: "9 - 10"
+    releaseDate: 2022-11-30
+    eol: 2024-06-30
+    eoes: 2025-08-31
+    latest: "6.0.23"
+    latestReleaseDate: 2024-08-14
+
+  - releaseCycle: "5.3"
+    supportedJavaVersions: "8 - 21"
+    supportedJakartaEEVersions: "7 - 8"
+    releaseDate: 2020-10-31
+    eol: 2024-08-31
+    eoes: 2029-06-30
+    lts: true
+    latest: "5.3.39"
+    latestReleaseDate: 2024-08-14
+
+  - releaseCycle: "5.2"
+    supportedJavaVersions: "8 - 11" # https://docs.spring.io/spring-framework/docs/5.2.22.RELEASE/spring-framework-reference/overview.html#overview
+    supportedJakartaEEVersions: "N/A"
     releaseDate: 2019-09-30
--   releaseCycle: "5.1"
-    eol: 2020-12-09
-    support: false
+    eol: 2021-12-31
+    eoes: 2023-12-31
+    link: https://github.com/spring-projects/spring-framework/releases/tag/v__LATEST__.RELEASE
+    latest: "5.2.25"
+    latestReleaseDate: 2023-07-13
+
+  - releaseCycle: "5.1"
+    supportedJavaVersions: "8 - 11" # https://docs.spring.io/spring-framework/docs/5.1.20.RELEASE/spring-framework-reference/overview.html#overview
+    supportedJakartaEEVersions: "N/A"
+    releaseDate: 2018-09-21
+    eol: 2020-12-31
+    eoes: 2022-12-31
+    link: https://github.com/spring-projects/spring-framework/releases/tag/v__LATEST__.RELEASE
     latest: "5.1.20"
     latestReleaseDate: 2020-12-09
-    releaseDate: 2018-09-21
--   releaseCycle: "5.0"
-    eol: 2020-12-09
-    support: false
+
+  - releaseCycle: "5.0"
+    supportedJavaVersions: "8" # https://docs.spring.io/spring-framework/docs/5.0.20.RELEASE/spring-framework-reference/overview.html#overview
+    supportedJakartaEEVersions: "N/A"
+    releaseDate: 2017-09-28
+    eol: 2020-12-31
+    link: https://github.com/spring-projects/spring-framework/releases/tag/v__LATEST__.RELEASE
     latest: "5.0.20"
     latestReleaseDate: 2020-12-09
-    releaseDate: 2017-09-28
--   releaseCycle: "4.3"
+
+  - releaseCycle: "4.3"
+    supportedJavaVersions: "6 - 8" # https://docs.spring.io/spring-framework/docs/4.3.30.RELEASE/spring-framework-reference/html/new-in-4.0.html#_java_8_as_well_as_6_and_7
+    supportedJakartaEEVersions: "N/A"
+    releaseDate: 2016-06-10
     eol: 2020-12-31
-    support: false
+    link: https://github.com/spring-projects/spring-framework/releases/tag/v__LATEST__.RELEASE
     latest: "4.3.30"
     latestReleaseDate: 2020-12-09
-    releaseDate: 2016-06-10
--   releaseCycle: "3.2"
+
+  - releaseCycle: "3.2"
+    supportedJavaVersions: "5 - 6" # https://docs.spring.io/spring-framework/docs/3.2.18.RELEASE/spring-framework-reference/html/new-in-3.0.html#new-in-3.0
+    supportedJakartaEEVersions: "N/A"
+    releaseDate: 2012-12-13
     eol: 2016-12-31
-    support: false
+    link: https://github.com/spring-projects/spring-framework/releases/tag/v__LATEST__.RELEASE
     latest: "3.2.18"
     latestReleaseDate: 2016-12-21
-    releaseDate: 2012-12-13
-permalink: /spring-framework
-releasePolicyLink: https://github.com/spring-projects/spring-framework/wiki/Spring-Framework-Versions
-activeSupportColumn: true
-releaseColumn: true
-releaseDateColumn: true
-eolColumn: Security Support
-iconSlug: spring
 
 ---
 
-> [Spring Framework](https://spring.io/projects/spring-framework) The Spring Framework provides a comprehensive programming and configuration model for modern Java-based enterprise applications - on any kind of deployment platform.
+> The [Spring Framework](https://spring.io/projects/spring-framework) provides a comprehensive
+> programming and configuration model for modern Java-based enterprise applications — on any kind of
+> deployment platform.
 
-See [Spring Framework Milestones](https://github.com/spring-projects/spring-framework/milestones) for upcoming releases. EoL policy described in [here](https://github.com/spring-projects/spring-framework/wiki/Spring-Framework-Versions)
+See [Spring Boot Milestones page](https://github.com/spring-projects/spring-framework/milestones)
+for upcoming releases and [Spring Boot Support page](https://spring.io/projects/spring-framework#support)
+for more details about the support roadmap.
+
+Extended support is available
+[from VMWare](https://tanzu.vmware.com/content/blog/vmware-spring-runtime-extended-support).
+
+## [JDK/Jakarta EE Compatibility](https://github.com/spring-projects/spring-framework/wiki/Spring-Framework-Versions#jdk-version-range)
+
+{% include table.html
+  labels="Release,JDK,Jakarta EE"
+  fields="releaseCycle,supportedJavaVersions,supportedJakartaEEVersions"
+  types="string,string"
+  rows=page.releases %}

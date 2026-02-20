@@ -1,75 +1,207 @@
 ---
 title: Amazon Kindle
-iconSlug: amazon
+addedAt: 2021-03-19
 category: device
-sortReleasesBy: releaseDate
-releases:
--   releaseCycle: "Kindle Paperwhite 5 (11th Generation)"
-    eol: false
-    latest: "5.14.3.0.1"
-    link: https://www.amazon.com/Paperwhite11Notes
-    releaseDate: 2021-10-27
--   releaseCycle: "Kindle Oasis 3 (10th Generation)"
-    eol: false
-    latest: "5.14.3.0.1"
-    link: https://www.amazon.com/Oasis10Notes
-    releaseDate: 2019-07-24
--   releaseCycle: "Kindle 10 (10th Generation)"
-    eol: false
-    latest: "5.14.3.0.1"
-    link: https://www.amazon.com/Kindle10Notes
-    releaseDate: 2019-04-10
--   releaseCycle: "Kindle Paperwhite 4 (10th Generation)"
-    eol: false
-    latest: "5.14.3.0.1"
-    link: https://www.amazon.com/Paperwhite10Notes
-    releaseDate: 2018-11-07
--   releaseCycle: "Kindle Oasis 2 (9th Generation)"
-    eol: false
-    latest: "5.14.3.0.1"
-    link: https://www.amazon.com/Oasis9Notes
-    releaseDate: 2017-10-31
--   releaseCycle: "Kindle 8 (8th Generation)"
-    eol: false
-    latest: "5.14.3.0.1"
-    link: https://www.amazon.com/Kindle8Notes
-    releaseDate: 2016-06-22
--   releaseCycle: "Kindle Oasis (8th Generation)"
-    eol: false
-    latest: "5.14.3"
-    link: https://www.amazon.com/Oasis8Notes
-    releaseDate: 2016-04-27
--   releaseCycle: "Kindle Voyage (7th Generation)"
-    eol: 2021-04-01
-    latest: "5.13.6"
-    link: https://www.amazon.com/Voyage7Notes
-    releaseDate: 2014-11-04
--   releaseCycle: "Kindle Paperwhite 3 (7th Generation)"
-    eol: false
-    latest: "5.14.3.0.1"
-    link: https://www.amazon.com/Paperwhite7Notes
-    releaseDate: 2015-06-30
--   releaseCycle: "Kindle 7 (7th Generation)"
-    eol: 2019-10-01
-    latest: "5.12.2.2"
-    releaseDate: 2014-10-02
--   releaseCycle: "Kindle Paperwhite 2 (6th Generation)"
-    eol: 2019-10-01
-    latest: "5.12.2.2"
-    releaseDate: 2013-09-30
+tags: amazon e-reader
+iconSlug: amazon
 permalink: /kindle
+alternate_urls:
+  - /amazon-kindle
 releasePolicyLink: https://www.amazon.com/gp/help/customer/display.html?nodeId=GKMQC26VQQMM8XSW
-activeSupportColumn: false
-releaseColumn: true
-releaseDateColumn: true
 eolColumn: Service Status
 
+# Release dates can be found on https://en.wikipedia.org/wiki/Amazon_Kindle.
+# Latest releases can be found on https://www.amazon.com/gp/help/customer/display.html?nodeId=GKMQC26VQQMM8XSW.
+releases:
+  - releaseCycle: "kindle-scribe-2024"
+    releaseLabel: "Kindle Scribe - 2024 Release"
+    releaseDate: 2024-12-04
+    eol: false
+    latest: "5.18.5"
+    latestReleaseDate: 2025-08-01
+    link: https://www.amazon.com/KindleScribe2024Notes
+
+  - releaseCycle: "kindle-colorsoft-1"
+    releaseLabel: "Kindle Colorsoft (1st Generation)"
+    releaseDate: 2024-10-30
+    eol: false
+    latest: "5.18.5"
+    latestReleaseDate: 2025-08-01
+    link: https://www.amazon.com/KindleColorsoft-2024-Notes
+
+  - releaseCycle: "paperwhite-12"
+    releaseLabel: "Kindle Paperwhite (12th Generation) - 2024 Release"
+    releaseDate: 2024-10-16
+    eol: false
+    latest: "5.18.5"
+    latestReleaseDate: 2025-08-01
+    link: https://www.amazon.com/KindlePaperwhite12-2024-Notes
+
+  - releaseCycle: "kindle-11-2024"
+    releaseLabel: "Kindle (11th Generation) - 2024 Release"
+    releaseDate: 2024-10-16
+    eol: false
+    latest: "5.18.5"
+    latestReleaseDate: 2025-08-01
+    link: https://www.amazon.com/Kindle11Notes
+
+  - releaseCycle: "kindle-scribe-2022"
+    releaseLabel: "Kindle Scribe - 2022 Release"
+    releaseDate: 2022-11-30
+    eol: false
+    latest: "5.18.5"
+    latestReleaseDate: 2025-08-01
+    link: https://www.amazon.com/KindleScribeNotes
+
+  - releaseCycle: "kindle-11-2022"
+    releaseLabel: "Kindle (11th Generation) - 2022 Release"
+    releaseDate: 2022-09-13
+    eol: false
+    latest: "5.18.5"
+    latestReleaseDate: 2025-08-01
+    link: https://www.amazon.com/Kindle11Notes
+
+  - releaseCycle: "paperwhite-11"
+    releaseLabel: "Kindle Paperwhite (11th Generation)"
+    releaseDate: 2021-10-27
+    eol: false
+    latest: "5.18.5"
+    latestReleaseDate: 2025-08-01
+    link: https://www.amazon.com/Paperwhite11Notes
+
+  - releaseCycle: "oasis-10"
+    releaseLabel: "Kindle Oasis (10th Generation)"
+    releaseDate: 2019-07-24
+    eol: false
+    latest: "5.18.2"
+    latestReleaseDate: 2025-04-01
+    link: https://www.amazon.com/Oasis10Notes
+
+  - releaseCycle: "kindle-10"
+    releaseLabel: "Kindle (10th Generation)"
+    releaseDate: 2019-04-10
+    eol: false
+    latest: "5.18.1"
+    latestReleaseDate: 2025-03-01
+    link: https://www.amazon.com/Kindle10Notes
+
+  - releaseCycle: "paperwhite-10"
+    releaseLabel: "Kindle Paperwhite (10th Generation)"
+    releaseDate: 2018-11-07
+    eol: false
+    latest: "5.18.1"
+    latestReleaseDate: 2025-03-01
+    link: https://www.amazon.com/Paperwhite10Notes
+
+  - releaseCycle: "oasis-9"
+    releaseLabel: "Kindle Oasis (9th Generation)"
+    releaseDate: 2017-10-31
+    eol: 2024-06-01 # more than 1 year without update
+    latest: "5.16.2.1.1"
+    latestReleaseDate: 2023-06-01
+    link: https://www.amazon.com/Oasis9Notes
+
+  - releaseCycle: "kindle-8"
+    releaseLabel: "Kindle (8th Generation)"
+    releaseDate: 2016-06-22
+    eol: 2024-06-01 # more than 1 year without update
+    latest: "5.16.2.1.1"
+    latestReleaseDate: 2023-06-01
+    link: https://www.amazon.com/Kindle8Notes
+
+  - releaseCycle: "oasis-8"
+    releaseLabel: "Kindle Oasis (8th Generation)"
+    releaseDate: 2016-04-27
+    eol: 2024-06-01 # more than 1 year without update
+    latest: "5.16.2.1.1"
+    latestReleaseDate: 2023-06-01
+    link: https://www.amazon.com/Oasis8Notes
+
+  - releaseCycle: "paperwhite-7"
+    releaseLabel: "Kindle Paperwhite (7th Generation)"
+    releaseDate: 2015-06-30
+    eol: 2024-06-01 # more than 1 year without update
+    latest: "5.16.2.1.1"
+    latestReleaseDate: 2023-06-01
+    link: https://www.amazon.com/Paperwhite7Notes
+
+  - releaseCycle: "voyage-7"
+    releaseLabel: "Kindle Voyage (7th Generation)"
+    releaseDate: 2014-11-04
+    eol: 2021-04-01
+    latest: "5.13.6"
+    latestReleaseDate: 2021-04-01
+    link: https://www.amazon.com/Voyage7Notes
+
+  - releaseCycle: "kindle-7"
+    releaseLabel: "Kindle (7th Generation)"
+    releaseDate: 2014-10-02
+    eol: 2019-10-01
+    latest: "5.12.2.2"
+
+  - releaseCycle: "paperwhite-6"
+    releaseLabel: "Kindle Paperwhite (6th Generation)"
+    releaseDate: 2013-09-30
+    eol: 2019-10-01
+    latest: "5.12.2.2"
+
+  - releaseCycle: "paperwhite-5"
+    releaseLabel: "Kindle Paperwhite (5th Generation)"
+    releaseDate: 2012-10-01
+    eol: 2015-06-26 # https://drivers.softpedia.com/blog/amazon-kindle-paperwhite-1st-generation-receives-firmware-5-6-1-1-485364.shtml
+    latest: "5.6.1.1"
+    latestReleaseDate: 2015-06-26 # # https://drivers.softpedia.com/blog/amazon-kindle-paperwhite-1st-generation-receives-firmware-5-6-1-1-485364.shtml
+
+  - releaseCycle: "kindle-5"
+    releaseLabel: "Kindle (5th Generation)"
+    releaseDate: 2012-09-06
+    eol: true
+    latest: "4.1.4"
+
+  - releaseCycle: "kindle-4"
+    releaseLabel: "Kindle (4th Generation)"
+    releaseDate: 2011-09-28
+    eol: true
+    latest: "4.1.4"
+
+  - releaseCycle: "touch-4"
+    releaseLabel: "Kindle Touch (4th Generation)"
+    releaseDate: 2011-09-28
+    eol: true
+    latest: "5.3.7.3"
+
+  - releaseCycle: "keyboard-3"
+    releaseLabel: "Kindle Keyboard (3rd Generation)"
+    releaseDate: 2010-08-27
+    eol: true
+    latest: "3.4.3"
+
+  - releaseCycle: "dx-2"
+    releaseLabel: "Kindle DX (2nd Generation)"
+    releaseDate: 2009-06-10
+    eol: true
+    latest: "2.5.8"
+
+  - releaseCycle: "kindle-2"
+    releaseLabel: "Kindle (2nd Generation)"
+    releaseDate: 2009-02-23
+    eol: true
+    latest: "2.5.8"
+
+  - releaseCycle: "kindle-1"
+    releaseLabel: "Kindle (1st Generation)"
+    releaseDate: 2007-11-19
+    eol: true
+    latest: "1.2.1"
 ---
 
-> [Amazon Kindle](https://en.wikipedia.org/wiki/Amazon_Kindle) is a series of e-readers designed by Amazon.
+> [Amazon Kindle](https://en.wikipedia.org/wiki/Amazon_Kindle) is a series of e-readers designed by
+> Amazon.
 
 For more information on the latest software release notes visit: [Kindle E-Reader Software Updates](https://www.amazon.com/gp/help/customer/display.html?nodeId=GKMQC26VQQMM8XSW).
 
-Kindles are guaranted four years of security updates from when the device was last sold on Amazon.com. For more information visit the [Kindle Device Software Security Updates webpage](https://www.amazon.com/gp/help/customer/display.html?nodeId=GF3LDHSB5YM9BYF7).
+Kindles are guaranteed four years of security updates from when the device was last sold on
+Amazon.com. For more information visit the [Kindle Device Software Security Updates webpage](https://www.amazon.com/gp/help/customer/display.html?nodeId=GF3LDHSB5YM9BYF7).
 
-The older version of release notes are not available on the Amazon website. The changelog is still available in the device by following the `Settings -> Device Info -> What's New` menu.
+The older version of release notes are not available on the Amazon website. The changelog is still
+available in the device by following the `Settings -> Device Info -> What's New` menu.

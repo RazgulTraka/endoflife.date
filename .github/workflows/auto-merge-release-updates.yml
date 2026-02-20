@@ -11,32 +11,51 @@ jobs:
     runs-on: ubuntu-latest
     if: ${{ github.actor == 'dependabot[bot]' }}
     steps:
-      - name: Dependabot metadata
-        id: metadata
-        uses: dependabot/fetch-metadata@v1.3.3
+      - id: metadata
+        name: Dependabot metadata
+        uses: dependabot/fetch-metadata@21025c705c08248db411dc16f3619e6b5f9ea21a # v2.5.0
         with:
           github-token: "${{ secrets.GITHUB_TOKEN }}"
-      - uses: actions/checkout@v3
-        name: Clone self repository
+
+      - name: Clone self repository
+        uses: actions/checkout@1af3b93b6815bc44a9784bd300feb67ff0d1eeb3 # v6
         with:
           ref: ${{ github.head_ref }}
           submodules: true
-      - name:
-        run: |
-          pip install -r requirements.txt
-          ls -lah _data/release-data
-          python _auto/latest.py
-      - uses: stefanzweifel/git-auto-commit-action@v4
-        name: Update latest and latestReleaseDate
+
+      - name: Set up Python
+        uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405 # v6.2.0
+        with:
+          python-version: "3.12"
+
+      - name: Install Python Dependencies
+        run: pip install -r '_data/release-data/requirements.txt'
+
+      - id: latest
+        name: Auto-update products
+        run: python '_data/release-data/update-product-data.py' -p 'products/'
+
+      - name: Commit changes
+        uses: stefanzweifel/git-auto-commit-action@04702edda442b2e678b25b537cec683a1493fcb9 # v5
         with:
           file_pattern: products/*
           commit_message: "🤖: Update latest release data"
-          status_options: '--untracked-files=no'
-          commit_author: 'github-actions[bot] <github-actions[bot]@users.noreply.github.com>'
-      # TODO: Leave a comment if there is a new major release that we don't match
-      - name: Enable auto-merge for Dependabot PRs for release data
-        if: ${{contains(steps.metadata.outputs.dependency-names, '_data/release-data')}}
+          status_options: "--untracked-files=no"
+          commit_author: "github-actions[bot] <github-actions[bot]@users.noreply.github.com>"
+
+      - name: Create PR
+        if: ${{ contains(steps.metadata.outputs.dependency-names, '_data/release-data') }}
         run: gh pr merge --auto --rebase "$PR_URL"
         env:
           PR_URL: ${{github.event.pull_request.html_url}}
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+
+      - name: Comment on PR about missing releases
+        uses: github-actions-up-and-running/pr-comment@f1f8ab2bf00dce6880a369ce08758a60c61d6c0b # v1.0.1
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          message: |
+            :warning: The following requires some attention:
+            ```
+            ${{ steps.latest.outputs.warning }}
+            ```

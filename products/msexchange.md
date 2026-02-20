@@ -1,93 +1,120 @@
 ---
 title: Microsoft Exchange
-permalink: /msexchange
-iconSlug: microsoftexchange
+addedAt: 2021-12-03
 category: server-app
-releasePolicyLink: https://docs.microsoft.com/lifecycle/products/?terms=Exchange%20Server
-activeSupportColumn: true
+tags: microsoft
+permalink: /msexchange
 versionCommand: Get-ExchangeServer | Format-List Name,Edition,AdminDisplayVersion
-releaseDateColumn: true
-sortReleasesBy: releaseDate
+releasePolicyLink: https://learn.microsoft.com/lifecycle/products/?terms=Exchange%20Server
+eoasColumn: true
+
+identifiers:
+  - cpe: cpe:/a:microsoft:exchange_server
+  - cpe: cpe:2.3:a:microsoft:exchange_server
+
 releases:
--   releaseCycle: "2019"
-    releaseLabel: "2019 CU12 May22SU"
+  - releaseCycle: "subscription"
+    releaseLabel: "Subscription Edition SU5"
+    releaseDate: 2025-07-01
+    eoas: false
+    eol: false
+    latest: "15.2.2562.37"
+    latestReleaseDate: 2026-02-10
+    link: https://support.microsoft.com/help/5074992
+
+  - releaseCycle: "2019"
+    releaseLabel: "2019 CU15 SU7"
     releaseDate: 2018-10-22
-    support: 2024-01-09
+    eoas: 2024-01-09
     eol: 2025-10-14
-    latest: "15.2.1118.9"
-    latestReleaseDate: 2022-05-10
--   releaseCycle: "2016"
-    releaseLabel: "2016 CU23 May22SU"
+    latest: "15.2.1748.43"
+    latestReleaseDate: 2026-02-10
+    link: https://support.microsoft.com/help/5074993
+
+  - releaseCycle: "2016"
+    releaseLabel: "2016 CU23 SU21"
     releaseDate: 2015-10-01
-    support: 2020-10-13
+    eoas: 2020-10-13
     eol: 2025-10-14
-    latest: "15.1.2507.9"
-    latestReleaseDate: 2022-05-10
--   releaseCycle: "2013"
-    releaseLabel: "2013 CU23 May22SU"
+    latest: "15.1.2507.66"
+    latestReleaseDate: 2026-02-10
+    link: https://support.microsoft.com/help/5074995
+
+  - releaseCycle: "2013"
+    releaseLabel: "2013 CU23 SU21"
     releaseDate: 2013-01-09
-    support: 2018-04-10
+    eoas: 2018-04-10
     eol: 2023-04-11
-    latest: "15.0.1497.36"
-    latestReleaseDate: 2022-05-10
--   releaseCycle: "2010"
+    latest: "15.0.1497.48"
+    latestReleaseDate: 2023-03-14
+    link: https://support.microsoft.com/help/5024296
+
+  - releaseCycle: "2010"
     releaseLabel: "2010 SP3 UR32"
     releaseDate: 2009-11-09
-    support: 2015-01-13
+    eoas: 2015-01-13
     eol: 2020-10-13
     latest: "14.3.513.0"
     latestReleaseDate: 2021-03-02
--   releaseCycle: "2007"
+
+  - releaseCycle: "2007"
     releaseLabel: "2007 SP3 UR23"
     releaseDate: 2007-03-08
-    support: 2012-04-10
+    eoas: 2012-04-10
     eol: 2017-04-11
     latest: "8.3.517.0"
     latestReleaseDate: 2017-03-21
--   releaseCycle: "2003"
+
+  - releaseCycle: "2003"
     releaseLabel: "2003 SP2"
     releaseDate: 2003-09-28
-    support: 2009-04-14
+    eoas: 2009-04-14
     eol: 2014-04-08
     latest: "6.5.7654.4"
     latestReleaseDate: 2008-08-01
--   releaseCycle: "2000"
+
+  - releaseCycle: "2000"
     releaseLabel: "2000 SP3"
     releaseDate: 2000-11-29
-    support: 2005-12-31
+    eoas: 2005-12-31
     eol: 2011-01-11
     latest: "6.0.6620.7"
     latestReleaseDate: 2008-08-01
--   releaseCycle: "5.5"
+
+  - releaseCycle: "5.5"
     releaseLabel: "5.5 SP4"
     releaseDate: 1998-02-03
-    support: 2003-12-31
+    eoas: 2003-12-31
     eol: 2006-01-10
     latest: "5.5.2653"
     latestReleaseDate: 2000-11-01
--   releaseCycle: "5.0"
+
+  - releaseCycle: "5.0"
     releaseLabel: "5.0 SP2"
     releaseDate: 1997-05-23
-    support: 2003-12-31
+    eoas: 2003-12-31
     eol: 2006-01-10
     latest: "5.0.1460"
     latestReleaseDate: 1998-02-19
--   releaseCycle: "4.0"
+
+  - releaseCycle: "4.0"
     releaseLabel: "4.0 SP5"
     releaseDate: 1996-06-11
-    support: false
+    eoas: true
     eol: true
     latest: "4.0.996"
     latestReleaseDate: 1998-05-05
-
 ---
 
-> [Microsoft Exchange Server](https://en.wikipedia.org/wiki/Microsoft_Exchange_Server) is a mail server and calendaring server developed by Microsoft.
+> [Microsoft Exchange Server](https://en.wikipedia.org/wiki/Microsoft_Exchange_Server) is a mail
+> server and calendaring server developed by Microsoft.
 
-[Exchange Server build numbers and release dates](https://docs.microsoft.com/exchange/new-features/build-numbers-and-release-dates)
+[Exchange Server build numbers and release dates](https://learn.microsoft.com/exchange/new-features/build-numbers-and-release-dates)
 
 CU: Cumulative Update
 SU: Security Update
+HU: Hotfix Update
 UR: Update Rollup
 
-The 2013 version was the last to which Service Pack (SP) appeared. As of 2016 onwards, only CU and SU updates will be available.
+The 2013 version was the last to which Service Pack (SP) appeared. As of 2016 onwards, only CU and
+SU updates will be available.

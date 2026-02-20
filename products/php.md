@@ -1,134 +1,167 @@
 ---
 title: PHP
-permalink: /php
+addedAt: 2019-05-27
 category: lang
-releasePolicyLink: https://www.php.net/supported-versions.php
-changelogTemplate: |
-  https://www.php.net/ChangeLog-{{ "__LATEST__" | split: "." | first }}.php#__LATEST__
-activeSupportColumn: true
-auto:
--   git: https://github.com/php/php-src.git
-    regex: ^php-(?<major>0|[1-9]\d*)\.(?<minor>0|[1-9]\d*)\.(?<patch>0|[1-9]\d*)$
+iconSlug: php
+permalink: /php
 versionCommand: php --version
-releaseDateColumn: true
-sortReleasesBy: 'cycleShortHand'
+releasePolicyLink: https://www.php.net/supported-versions.php
+changelogTemplate: "https://www.php.net/ChangeLog-{{'__LATEST__'|split:'.'|first}}.php#__LATEST__"
+eoasColumn: true
+
+identifiers:
+  - purl: pkg:deb/ubuntu/php
+  - purl: pkg:deb/debian/php
+  - purl: pkg:generic/php
+  - purl: pkg:generic/php-cli
+  - purl: pkg:generic/php-fpm
+  - repology: php
+  - cpe: cpe:2.3:a:php:php
+  - cpe: cpe:/a:php:php
+
+auto:
+  methods:
+    - php: https://www.php.net/releases/index.php?json&max=-1
+
 releases:
--   releaseCycle: "8.1"
-    cycleShortHand: "801"
-    support: 2023-11-25
-    eol: 2024-11-25
-    latest: "8.1.8"
+  - releaseCycle: "8.5"
+    releaseDate: 2025-11-20
+    eoas: 2027-12-31
+    eol: 2029-12-31
+    latest: "8.5.3"
+    latestReleaseDate: 2026-02-12
 
-    latestReleaseDate: 2022-07-05
-    releaseDate: 2021-11-23
--   releaseCycle: "8.0"
-    cycleShortHand: "800"
-    support: 2022-11-26
+  - releaseCycle: "8.4"
+    releaseDate: 2024-11-21
+    eoas: 2026-12-31
+    eol: 2028-12-31
+    latest: "8.4.18"
+    latestReleaseDate: 2026-02-12
+
+  - releaseCycle: "8.3"
+    releaseDate: 2023-11-23
+    eoas: 2025-12-31
+    eol: 2027-12-31
+    latest: "8.3.30"
+    latestReleaseDate: 2026-01-15
+
+  - releaseCycle: "8.2"
+    releaseDate: 2022-12-08
+    eoas: 2024-12-31
+    eol: 2026-12-31
+    latest: "8.2.30"
+    latestReleaseDate: 2025-12-18
+
+  - releaseCycle: "8.1"
+    releaseDate: 2021-11-25
+    eoas: 2023-11-25
+    eol: 2025-12-31
+    latest: "8.1.34"
+    latestReleaseDate: 2025-12-18
+
+  - releaseCycle: "8.0"
+    releaseDate: 2020-11-26
+    eoas: 2022-11-26
     eol: 2023-11-26
-    latest: "8.0.21"
+    latest: "8.0.30"
+    latestReleaseDate: 2023-08-03
 
-    latestReleaseDate: 2022-07-06
-    releaseDate: 2020-11-24
--   releaseCycle: "7.4"
-    cycleShortHand: "704"
-    support: 2021-11-28
+  - releaseCycle: "7.4"
+    releaseDate: 2019-11-28
+    eoas: 2021-11-28
     eol: 2022-11-28
-    latest: "7.4.30"
+    latest: "7.4.33"
+    latestReleaseDate: 2022-11-03
 
-    latestReleaseDate: 2022-06-07
-    releaseDate: 2019-11-26
--   releaseCycle: "7.3"
-    cycleShortHand: "703"
-    support: 2020-12-06
+  - releaseCycle: "7.3"
+    releaseDate: 2018-12-06
+    eoas: 2020-12-06
     eol: 2021-12-06
     latest: "7.3.33"
+    latestReleaseDate: 2021-11-18
 
-    latestReleaseDate: 2021-11-16
-    releaseDate: 2018-12-04
--   releaseCycle: "7.2"
-    cycleShortHand: "702"
-    support: 2019-11-30
+  - releaseCycle: "7.2"
+    releaseDate: 2017-11-30
+    eoas: 2019-11-30
     eol: 2020-11-30
     latest: "7.2.34"
+    latestReleaseDate: 2020-10-01
 
-    latestReleaseDate: 2020-09-30
-    releaseDate: 2017-11-28
--   releaseCycle: "7.1"
-    cycleShortHand: "701"
-    support: 2018-12-01
+  - releaseCycle: "7.1"
+    releaseDate: 2016-12-01
+    eoas: 2018-12-01
     eol: 2019-12-01
     latest: "7.1.33"
+    latestReleaseDate: 2019-10-24
 
-    latestReleaseDate: 2019-10-22
-    releaseDate: 2016-11-30
--   releaseCycle: "7.0"
-    cycleShortHand: "700"
-    support: 2018-01-04
+  - releaseCycle: "7.0"
+    releaseDate: 2015-12-03
+    eoas: 2018-01-04
     eol: 2019-01-10
     latest: "7.0.33"
+    latestReleaseDate: 2019-01-10
 
-    latestReleaseDate: 2018-12-04
-    releaseDate: 2015-12-01
--   releaseCycle: "5.6"
-    cycleShortHand: "506"
-    support: 2017-01-19
+  - releaseCycle: "5.6"
+    releaseDate: 2014-08-28
+    eoas: 2017-01-19
     eol: 2018-12-31
     latest: "5.6.40"
+    latestReleaseDate: 2019-01-10
 
-    latestReleaseDate: 2019-01-09
-    releaseDate: 2014-08-27
--   releaseCycle: "5.5"
-    cycleShortHand: "505"
-    support: 2015-07-10
+  - releaseCycle: "5.5"
+    releaseDate: 2013-06-20
+    eoas: 2015-07-10
     eol: 2016-07-21
     latest: "5.5.38"
+    latestReleaseDate: 2016-07-21
 
-    latestReleaseDate: 2016-07-20
-    releaseDate: 2013-06-19
--   releaseCycle: "5.4"
-    cycleShortHand: "504"
-    support: 2014-09-14
+  - releaseCycle: "5.4"
+    releaseDate: 2012-03-01
+    eoas: 2014-09-14
     eol: 2015-09-14
     latest: "5.4.45"
+    latestReleaseDate: 2015-09-03
 
-    latestReleaseDate: 2015-09-01
-    releaseDate: 2012-02-29
--   releaseCycle: "5.3"
-    cycleShortHand: "503"
-    support: 2011-06-30
+  - releaseCycle: "5.3"
+    releaseDate: 2009-06-30
+    eoas: 2011-06-30
     eol: 2014-08-14
     latest: "5.3.29"
+    latestReleaseDate: 2014-08-14
 
-    latestReleaseDate: 2014-08-13
-    releaseDate: 2009-06-29
--   releaseCycle: "5.2"
-    cycleShortHand: "502"
-    support: 2008-11-02
+  - releaseCycle: "5.2"
+    releaseDate: 2006-11-02
+    eoas: 2008-11-02
     eol: 2011-01-06
     latest: "5.2.17"
-
     latestReleaseDate: 2011-01-06
-    releaseDate: 2006-11-01
--   releaseCycle: "5.1"
-    cycleShortHand: "501"
-    support: 2006-08-24
+
+  - releaseCycle: "5.1"
+    releaseDate: 2005-11-24
+    eoas: 2006-08-24
     eol: 2006-08-24
     latest: "5.1.6"
+    latestReleaseDate: 2006-08-24
 
-    latestReleaseDate: 2006-08-23
-    releaseDate: 2005-11-23
--   releaseCycle: "5.0"
-    cycleShortHand: "500"
-    support: 2005-09-05
+  - releaseCycle: "5.0"
+    releaseDate: 2004-07-13
+    eoas: 2005-09-05
     eol: 2005-09-05
     latest: "5.0.5"
     latestReleaseDate: 2005-09-05
-    releaseDate: 2004-07-15
 
 ---
 
-> [PHP](https://www.php.net/): Hypertext Preprocessor (or simply PHP) is a general-purpose programming language originally designed for web development.
+> [PHP](https://www.php.net/): Hypertext Preprocessor (or simply PHP) is a general-purpose
+> programming language originally designed for web development.
 
-Each release branch of PHP is fully supported for two years from its initial stable release. During this period, bugs and security issues that have been reported are fixed and are released in regular point releases.
+Each release branch of PHP is fully supported for two years from its initial stable release.
+During this period, bugs and security issues that have been reported are fixed and are released in
+regular point releases.
 
-After this two year period of active support, each branch is then supported for an additional year for critical security issues only. Releases during this period are made on an as-needed basis: there may be multiple point releases, or none, depending on the number of reports.
+After this two-year period of active support, each branch is then supported for an additional two years
+for critical security issues only. Releases during this period are made on an as-needed basis:
+there may be multiple point releases, or none, depending on the number of reports.
+
+The PHP Release Cycle was [extended in March 2024](https://wiki.php.net/rfc/release_cycle_update)
+from 3 to 4 years: 2 years of bug fixes, and 2 years of security fixes.

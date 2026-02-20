@@ -1,59 +1,63 @@
 ---
-permalink: /centos
 title: CentOS
+addedAt: 2019-05-29
 category: os
-versionCommand: lsb_release --release
-releasePolicyLink: https://wiki.centos.org/About/Product
-activeSupportColumn: true
-releaseDateColumn: true
-sortReleasesBy: releaseDate
-releaseLabel: "CentOS Stream __RELEASE_CYCLE__"
+tags: discontinued linux-distribution
+iconSlug: centos
+permalink: /centos
+versionCommand: cat /etc/redhat-release
+releasePolicyLink: https://wiki.centos.org/About(2f)Product.html
+eoasColumn: true
+
+identifiers:
+  - cpe: cpe:/o:centos:centos
+  - cpe: cpe:2.3:o:centos:centos
+
 releases:
--   releaseCycle: "6"
-    releaseLabel: "CentOS 6"
-    support: 2017-05-10
-    eol: 2020-11-30
-    latest: "6.10"
-    link: https://wiki.centos.org/Manuals/ReleaseNotes/CentOS6.10
-    releaseDate: 2011-07-10
--   releaseCycle: "7"
-    releaseLabel: "CentOS Linux 7"
-    support: 2020-08-06
-    eol: 2024-06-30
-    latest: "7 (2009)"
-    link: https://wiki.centos.org/Manuals/ReleaseNotes/CentOS7.2009
-    releaseDate: 2014-07-07
--   releaseCycle: "8"
-    releaseLabel: "CentOS Linux 8"
-    support: 2021-12-31
+  - releaseCycle: "8"
+    releaseDate: 2019-09-24
+    eoas: 2021-12-31
     eol: 2021-12-31
     latest: "8 (2111)"
-    link: https://wiki.centos.org/Manuals/ReleaseNotes/CentOS8.2111
-    releaseDate: 2019-09-24
--   releaseCycle: "stream-8"
-    support: 2024-05-31
-    eol: 2024-05-31
-    releaseLabel: "CentOS Stream 8"
-    latest: "8"
-    link: https://wiki.centos.org/Manuals/ReleaseNotes/CentOSStream
-    releaseDate: 2019-09-24
--   releaseCycle: "9"
-    support: 2027-05-31
-    eol: 2027-05-31
-    latest: "9"
+    latestReleaseDate: 2021-11-16 # https://blog.centos.org/2021/11/announcing-the-latest-release-of-centos-linux-8-2111/
+    link: https://wiki.centos.org/Manuals(2f)ReleaseNotes(2f)CentOS8(2e)2111.html
 
-    releaseDate: 2021-09-15
+  - releaseCycle: "7"
+    releaseDate: 2014-07-07
+    eoas: 2020-08-06
+    eol: 2024-06-30
+    latest: "7 (2009)"
+    latestReleaseDate: 2020-11-12 # # https://www.linux.org/threads/centos-announce-release-for-centos-linux-7-2009-on-the-x86_64-architecture.31534/
+    link: https://wiki.centos.org/Manuals(2f)ReleaseNotes(2f)CentOS7(2e)2009.html
 
+  - releaseCycle: "6"
+    releaseDate: 2011-07-10
+    eoas: 2017-05-10
+    eol: 2020-11-30
+    latest: "6.10"
+    latestReleaseDate: 2018-07-03 # https://blog.centos.org/2018/07/release-for-centos-linux-6-10-i386-and-x86_64/
+    link: https://wiki.centos.org/Manuals(2f)ReleaseNotes(2f)CentOS6(2e)10.html
+
+  - releaseCycle: "5"
+    releaseDate: 2007-04-12
+    eoas: 2014-01-31
+    eol: 2017-03-31
+    latest: "5.11"
+    latestReleaseDate: 2014-09-30 # https://lists.centos.org/pipermail/centos-announce/2014-September/020601.html
+    link: https://wiki.centos.org/Manuals(2f)ReleaseNotes(2f)CentOS5(2e)11.html
 ---
 
-> [CentOS](https://centos.org/) is a Linux distribution that provides a free, enterprise-class, community-supported computing platform functionally compatible with Red Hat Enterprise Linux.
+> [CentOS Linux](https://centos.org/centos-linux/) was a Linux distribution that provided a free,
+> enterprise-class, community-supported computing platform functionally compatible with
+> [Red Hat Enterprise Linux (RHEL)](/rhel).
 
-The CentOS distribution comes in two variants: CentOS Linux and CentOS Stream.  CentOS Linux is rebuilt from Red Hat Enterprise Linux source code and referred to as the downstream variant.  CentOS Stream is the upstream variant, and contains content that is planned for the next minor release of Red Hat Enterprise Linux.
+{: .warning }
 
-CentOS Linux currently has 2 major released branches that are active: CentOS Linux 7 and CentOS Linux 8. **The CentOS Project provides updates or other changes ONLY for the latest version of each major branch**. Thus, if the latest minor version of CentOS Linux 7 is version 7.9 then the CentOS Project only provides updated software for this minor version in the 7 branch. If you are using an older minor version than the latest in a given branch, then you are missing security and bugfix updates.
+> CentOS Linux has been discontinued and is **not safe to use anymore**. Read the [information on
+> upgrade and migration options](https://blog.centos.org/2023/04/end-dates-are-coming-for-centos-stream-8-and-centos-linux-7/).
 
-Since minor versions of CentOS are point in time releases of a major branch, starting with CentOS Linux 7, CentOS Linux uses a date code as the minor version. As an example, `CentOS Linux 7 (1406)` means June 2014 and `CentOS Linux 7 (1503)` means March 2015. For releases before CentOS 7 - minor versions are incremental (6.0, 6.1, 6.2, etc.).
+Work on [CentOS Linux 8 ceased at the end of 2021](https://blog.centos.org/2020/12/future-is-centos-stream/)
+as Red Hat shifted focus to [CentOS Stream](/centos-stream).
 
-CentOS Stream only has major versions, no minor versions. Its support ends when its corresponding RHEL release leaves full support.
-
-The project has [announced](https://blog.centos.org/2020/12/future-is-centos-stream/) that work on CentOS Linux 8 will cease at the end of 2021.
+Post-end-of-life commercial long-term support for CentOS 6, 7, and 8 is available at [OpenLogic by
+Perforce](https://www.openlogic.com/solutions/enterprise-linux-support/centos).

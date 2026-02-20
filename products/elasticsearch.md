@@ -1,39 +1,120 @@
 ---
 title: Elasticsearch
+addedAt: 2019-06-16
+category: database
+tags: elastic java-runtime
+iconSlug: elasticsearch
 permalink: /elasticsearch
-category: db
-releasePolicyLink: https://www.elastic.co/support/eol
-# Take the latest version, and drop the patch version to get MAJOR.MINOR
-changelogTemplate: >
-  https://www.elastic.co/guide/en/elasticsearch/reference/{{"__LATEST__"|split:"."|pop|join:'.'}}/release-notes-__LATEST__.html
 versionCommand: $ES_HOME/bin/elasticsearch -v
-sortReleasesBy: releaseDate
+releasePolicyLink: https://www.elastic.co/support_policy
+changelogTemplate: "https://www.elastic.co/guide/en/elasticsearch/reference/{{'__LATEST__'|split:'.'|pop|join:'.'}}/release-notes-__LATEST__.html"
+eolColumn: Support
+
+identifiers:
+  - repology: elasticsearch
+  - purl: pkg:deb/debian/elasticsearch
+  - purl: pkg:deb/ubuntu/elasticsearch
+  - purl: pkg:rpm/amzn/elasticsearch
+  - purl: pkg:rpm/redhat/elasticsearch
+  - purl: pkg:rpm/centos/elasticsearch
+  - purl: pkg:github/elastic/elasticsearch
+  - purl: pkg:maven/org.elasticsearch/elasticsearch
+  - cpe: cpe:2.3:a:elastic:elasticsearch
+  - cpe: cpe:/a:elastic:elasticsearch
+  - cpe: cpe:2.3:a:elasticsearch:elasticsearch
+  - cpe: cpe:/a:elasticsearch:elasticsearch
+
 auto:
--   git: https://github.com/elastic/elasticsearch.git
+  methods:
+    - git: https://github.com/elastic/elasticsearch.git
+
+# For EOL, see https://www.elastic.co/support/eol
 releases:
-# The EOL will update on minor 8.x releases
--   releaseCycle: "8"
-    eol: 2023-10-26
-    latest: "8.3.2"
-    latestReleaseDate: 2022-07-07
-    releaseDate: 2022-02-10
--   releaseCycle: "7"
-    eol: 2023-08-01
-    latest: "7.17.5"
-    latestReleaseDate: 2022-06-28
+  - releaseCycle: "9.3"
+    releaseDate: 2026-02-03
+    eol: false
+    latest: "9.3.0"
+    latestReleaseDate: 2026-01-28
+    link: https://www.elastic.co/docs/release-notes/elasticsearch#elasticsearch-__LATEST__-release-notes
+
+  - releaseCycle: "9.2"
+    releaseDate: 2025-10-21
+    eol: false
+    latest: "9.2.5"
+    latestReleaseDate: 2026-01-28
+    link: https://www.elastic.co/docs/release-notes/elasticsearch#elasticsearch-__LATEST__-release-notes
+
+  - releaseCycle: "9.1"
+    releaseDate: 2025-07-23
+    eol: false
+    latest: "9.1.10"
+    latestReleaseDate: 2026-01-08
+    link: https://www.elastic.co/docs/release-notes/elasticsearch#elasticsearch-__LATEST__-release-notes
+
+  - releaseCycle: "8.19"
+    releaseDate: 2025-07-23
+    eol: 2027-07-15
+    latest: "8.19.11"
+    latestReleaseDate: 2026-01-28
+
+  - releaseCycle: "8.18"
+    releaseDate: 2025-04-10
+    eol: 2025-10-21
+    latest: "8.18.8"
+    latestReleaseDate: 2025-10-02
+
+  - releaseCycle: "9.0"
+    releaseDate: 2025-04-08
+    eol: false
+    latest: "9.0.8"
+    latestReleaseDate: 2025-10-02
+    link: https://www.elastic.co/docs/release-notes/elasticsearch#elasticsearch-__LATEST__-release-notes
+
+  - releaseCycle: "8.17"
+    releaseDate: 2024-12-11
+    eol: false # Supposedly until 8.19 released, but they've released twice since
+    latest: "8.17.10"
+    latestReleaseDate: 2025-08-05
+
+  - releaseCycle: "8.16"
+    releaseDate: 2024-11-08
+    eol: 2025-04-15
+    latest: "8.16.6"
+    latestReleaseDate: 2025-03-19
+
+  - releaseCycle: "7"
     releaseDate: 2019-04-10
--   releaseCycle: "6"
+    eol: 2026-01-15
+    latest: "7.17.29"
+    latestReleaseDate: 2025-06-18
+
+  - releaseCycle: "6"
+    releaseDate: 2017-11-14
     eol: 2022-02-10
     latest: "6.8.23"
     latestReleaseDate: 2022-01-13
-    releaseDate: 2017-11-14
 
 ---
 
-> Elasticsearch is a search engine that provides a distributed, multitenant-capable full-text search engine with an HTTP web interface and schema-free JSON documents.
+> Elasticsearch is a search engine that provides a distributed, multi-tenant-capable full-text search
+> engine with an HTTP web interface and schema-free JSON documents.
 
-Each major release of all Elastic products is supported for at least 18 months from the General Availability date. The last minor release of the two most recent major branches of Elasticsearch (and compatible releases of Kibana, Beats, and Logstash) is maintained. The EOL date of a major release is usually bumped over time as additional minor versions are released.
+Elasticsearch is part of the [Elastic Stack](https://www.elastic.co/elastic-stack/), also known as the
+[ELK Stack](https://www.elastic.co/what-is/elk-stack). It shares the same support policy as the
+other products in the Elastic Stack (Kibana, Logstash, Beats...).
 
-Major versions will introduce features and break backwards compatibility. Minor versions, such as 7.1.0 and 7.2.0, will only introduce features. Maintenance releases, such as 7.1.1 and 7.1.2, will fix bugs only.
+Elastic Stack product releases follow [Semantic Versioning](https://semver.org/).
+Elastic provides maintenance for each major release series for the longest of 30 months after the GA date of the major release
+or 18 months after the GA date of the following major release.
+For example, if version 1.0 was released on 10-Apr-2019 and version 2.0 was released on 10-Feb-2022.
 
-Elasticsearch maintains the most recent minor release from the current major release stream and the most recent minor release from the prior major release stream. For example, Elasticsearch 6.8.x was maintained until the GA release of Elasticsearch 8.0.0.
+- 30 months from 1.0 GA date is 10-Oct-2021
+- 18 months from 2.0 GA date is 10-Aug-2023
+- 1.x maintenance would end on 10-Aug-2023
+
+End-of-life dates for Elasticsearch can be found on the [Elastic product EOL dates page](https://www.elastic.co/support/eol).
+Support for various operating systems can also be found on the [Elastic support matrix page](https://www.elastic.co/support/matrix).
+License information can be found on the [Elastic license page](https://www.elastic.co/pricing/faq/licensing).
+
+*[GA]: General Availability
+*[EOL]: End Of Life

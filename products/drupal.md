@@ -1,84 +1,198 @@
 ---
 title: Drupal
-permalink: /drupal
-releasePolicyLink: https://www.drupal.org/about/core/policies/core-release-cycles/schedule
+addedAt: 2019-05-29
 category: server-app
-changelogTemplate: https://www.drupal.org/project/drupal/releases/__LATEST__
-activeSupportColumn: true
-releaseDateColumn: true
-releaseColumn: true
+tags: php-runtime
+iconSlug: drupal
+permalink: /drupal
 versionCommand: drush status
-releaseImage: https://www.drupal.org/files/2019_minor_release_schedule.png
+releasePolicyLink: https://www.drupal.org/about/core/policies/core-release-cycles/schedule
+releaseImage: https://www.drupal.org/files/Drupal2024-2027.png
+changelogTemplate: https://www.drupal.org/project/drupal/releases/__LATEST__
+eoesColumn: Commercial Support
+eoasColumn: true
+
+identifiers:
+  - repology: php:drupal
+  - purl: pkg:composer/drupal/core
+  - purl: pkg:docker/bitnami/drupal
+  - purl: pkg:docker/library/drupal
+  - purl: pkg:github/drupal/core
+  - cpe: cpe:2.3:a:drupal:drupal
+  - cpe: cpe:/a:drupal:drupal
+
 auto:
--   git: https://github.com/drupal/core.git
-sortReleasesBy: 'releaseCycle'
+  methods:
+    - git: https://github.com/drupal/drupal.git
+
+# eoas(x) = releaseDate(x+1)
+# eol(x) documented on https://www.drupal.org/about/core/policies/core-release-cycles/schedule.
+# Minor releases usually happen on the third Wednesday every six months.
 releases:
--   releaseCycle: "9.4"
-    support: 2022-12-14
-    eol: 2023-06-21
-    latest: "9.4.3"
-    latestReleaseDate: 2022-07-20
+  - releaseCycle: "11.3"
+    releaseDate: 2025-12-17
+    eoas: 2026-06-16 # 6 months bug & security fixes (documented under https://www.drupal.org/about/core/policies/core-release-cycles/release-process-overview#s-minor-versions)
+    eol: 2026-12-16 # after 1 year (documented under https://www.drupal.org/about/core/policies/core-release-cycles/release-process-overview#s-minor-versions)
+    latest: "11.3.3"
+    latestReleaseDate: 2026-02-05
+
+  - releaseCycle: "10.6"
+    releaseDate: 2025-12-17
+    eoas: 2026-06-16
+    eol: 2026-12-16
+    latest: "10.6.3"
+    latestReleaseDate: 2026-02-05
+
+  - releaseCycle: "11.2"
+    releaseDate: 2025-06-18
+    eoas: 2025-12-10 # guessed, releaseDate(11.3) as planned on https://www.drupal.org/about/core/policies/core-release-cycles/schedule
+    eol: 2026-06-17
+    latest: "11.2.10"
+    latestReleaseDate: 2025-12-10
+
+  - releaseCycle: "10.5"
+    releaseDate: 2025-06-18
+    eoas: 2025-12-17
+    eol: 2026-06-17
+    latest: "10.5.8"
+    latestReleaseDate: 2025-12-09
+
+  - releaseCycle: "10.4"
+    releaseDate: 2024-12-17
+    eoas: 2025-06-18 # releaseDate(10.5)
+    eol: 2025-12-10 # guessed, as planned on https://www.drupal.org/about/core/policies/core-release-cycles/schedule
+    latest: "10.4.9"
+    latestReleaseDate: 2025-11-12
+
+  - releaseCycle: "11.1"
+    releaseDate: 2024-12-16
+    eoas: 2025-06-18 # releaseDate(11.2)
+    eol: 2025-12-10 # guessed, as planned on https://www.drupal.org/about/core/policies/core-release-cycles/schedule
+    latest: "11.1.9"
+    latestReleaseDate: 2025-11-12
+
+  - releaseCycle: "11.0"
+    releaseDate: 2024-08-02
+    eoas: 2024-12-16 # releaseDate(11.1)
+    eol: 2025-06-16
+    latest: "11.0.13"
+    latestReleaseDate: 2025-03-19
+
+  - releaseCycle: "10.3"
+    releaseDate: 2024-06-20
+    eoas: 2024-08-02
+    eol: 2025-06-16
+    latest: "10.3.14"
+    latestReleaseDate: 2025-03-19
+
+  - releaseCycle: "10.2"
+    releaseDate: 2023-12-15
+    eoas: 2024-06-20
+    eol: 2024-12-17
+    latest: "10.2.12"
+    latestReleaseDate: 2024-11-22
+
+  - releaseCycle: "10.1"
+    releaseDate: 2023-06-22
+    eoas: 2023-12-15
+    eol: 2024-06-20
+    latest: "10.1.8"
+    latestReleaseDate: 2024-01-16
+
+  - releaseCycle: "10.0"
+    releaseDate: 2022-12-15
+    eoas: 2023-06-21
+    eol: 2023-12-15
+    latest: "10.0.11"
+    latestReleaseDate: 2023-09-19
+
+  - releaseCycle: "9.5"
+    releaseDate: 2022-12-15
+    eoas: 2023-06-21
+    eol: 2023-11-01
+    latest: "9.5.11"
+    latestReleaseDate: 2023-09-19
+
+  - releaseCycle: "9.4"
     releaseDate: 2022-06-15
--   releaseCycle: "9.3"
-    support: 2022-06-15
-    eol: 2022-12-14
-    latest: "9.3.19"
-    latestReleaseDate: 2022-07-20
+    eoas: 2022-12-14
+    eol: 2023-06-21
+    latest: "9.4.15"
+    latestReleaseDate: 2023-05-03
+
+  - releaseCycle: "9.3"
     releaseDate: 2021-12-08
--   releaseCycle: "9.2"
-    support: 2021-12-08
+    eoas: 2022-06-15
+    eol: 2022-12-14
+    latest: "9.3.22"
+    latestReleaseDate: 2022-09-28
+
+  - releaseCycle: "9.2"
+    releaseDate: 2021-06-16
+    eoas: 2021-12-08
     eol: 2022-06-15
     latest: "9.2.21"
     latestReleaseDate: 2022-06-10
-    releaseDate: 2021-06-16
--   releaseCycle: "9.1"
-    support: 2021-06-16
+
+  - releaseCycle: "9.1"
+    releaseDate: 2020-12-02
+    eoas: 2021-06-16
     eol: 2021-12-08
     latest: "9.1.15"
     latestReleaseDate: 2021-11-24
-    releaseDate: 2020-12-02
--   releaseCycle: "9.0"
-    support: 2020-12-02
+
+  - releaseCycle: "9.0"
+    releaseDate: 2020-06-03
+    eoas: 2020-12-02
     eol: 2021-06-16
     latest: "9.0.14"
     latestReleaseDate: 2021-05-25
+
+  - releaseCycle: "8.9"
     releaseDate: 2020-06-03
--   releaseCycle: "8.9"
-    support: 2020-12-01
+    eoas: 2020-12-01
     eol: 2021-11-02
     latest: "8.9.20"
     latestReleaseDate: 2021-11-17
-    releaseDate: 2020-06-03
--   releaseCycle: "8.8"
-    support: 2020-06-03
+
+  - releaseCycle: "8.8"
+    releaseDate: 2019-12-04
+    eoas: 2020-06-03
     eol: 2020-12-01
     latest: "8.8.12"
     latestReleaseDate: 2020-11-25
-    releaseDate: 2019-12-04
--   releaseCycle: "7"
-    support: 2015-11-19
-    latestReleaseDate: 2022-06-01
-    eol: 2023-11-01
-    latest: "7.90"
+
+  - releaseCycle: "7"
     lts: true
     releaseDate: 2011-01-05
+    eoas: 2015-11-19
+    eol: 2025-01-05
+    eoes: false
+    latest: "7.103"
+    latestReleaseDate: 2024-12-04
 
 ---
 
-> [Drupal](https://www.drupal.org/) is a free and open-source content management framework written in PHP and distributed under the GNU General Public License.
+> [Drupal](https://www.drupal.org/) is a free and open-source content management framework written
+> in PHP and distributed under the GNU General Public License.
 
-Releases are fully supported for 2 minor versions from initial stable release. During this period, bugs and security issues that have been reported are fixed and are released during the [release windows on the first and third Wednesdays of each month](https://www.drupal.org/about/core/policies/core-release-cycles/schedule#windows) (US time). The final minor release in major release cycle is a long-term support (LTS) release and has extended security coverage.
+Each major version receives active support for about two years, followed by maintenance support and
+security coverage for about two more years. Last three major versions are supported
+with a minimum of 4 years.
 
-**Drupal 9.4** will receive security coverage until June 21, 2023 when Drupal 10.1.0 is [released](https://www.drupal.org/about/core/policies/core-release-cycles/schedule#next).
+## [Release Schedule](https://www.drupal.org/about/core/policies/core-release-cycles/schedule)
 
-**Drupal 9.3** will receive security coverage until December 14, 2022 when Drupal 9.5.0 and 10.0.0 are [released](https://www.drupal.org/about/core/policies/core-release-cycles/schedule#current).
+- A new Drupal major version is released every two years in even years (2022, 2024, etc.).
+- Minor versions are released every six months. They contain bug fixes, new features, and deprecations.
+- Patch versions are released monthly. They only contain non-disruptive bug fixes, so site owners can safely upgrade their applications.
 
-**Drupal 9.2** received security coverage until June 15, 2022 when Drupal 9.4.0 was released.
+## [Long Term Support](https://www.drupal.org/about/core/policies/core-release-cycles/release-process-overview#s-maintenance-minors-and-the-lts-phase)
 
-**Drupal 9.1** received security coverage until December 8, 2021 when Drupal 9.3.0 was released.
+When a new major version is released, a corresponding minor version with the same
+API is released for the previous major version. This begins the Long-Term Support (LTS) phase.
+During this phase, a maintenance minor for the previous major is released every six months.
+Maintenance minors can include certain bug fixes, API additions for forward compatibility, security updates, and dependency updates.
 
-**Drupal 9.0** received security coverage until June 16, 2021 when Drupal 9.2.0 was released.
-
-**Drupal 8.x** [is EOL](https://www.drupal.org/about/core/policies/core-release-cycles/schedule#drupal-8-eol).
-
-**Drupal 7** will receive security coverage [until November 2023](https://www.drupal.org/about/core/policies/core-release-cycles/schedule#drupal-7-eol) and [limited vendor extended support](https://www.drupal.org/project/d7es)
+**Drupal 7** is now unsupported.
+Commercial support for Drupal 7 is available post end-of-life through Drupal's
+[Certified D7 End of Life Support Partners](https://www.drupal.org/about/drupal-7/d7eol/partners#commercial-support).

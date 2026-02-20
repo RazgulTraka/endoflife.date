@@ -1,38 +1,63 @@
-title: endoflife.date
-baseurl: /
+---
+# Jekyll configuration - https://jekyllrb.com/docs/configuration/
+
+# Site settings
 url: https://endoflife.date
+title: endoflife.date
+
+# Build settings
+encoding: utf-8
 markdown: kramdown
+strict_front_matter: true # Cause a build to fail if there is a YAML syntax error (#40).
 plugins:
   - jekyll-feed
   - jekyll-timeago
   - jekyll-seo-tag
   - jekyll-last-modified-at
   - jemoji
-exclude:
-  - Gemfile
-  - Gemfile.lock
-  - node_modules
-  - vendor/
-  - README.md
-  - LICENSE
-  - _auto
-include:
-  - _redirects
-  - _headers
-# Theme Documentation: https://pmarsceill.github.io/just-the-docs/
+
+# Silence Saas deprecation warnings, to be removed after this is fixed in just-the-docs
+sass:
+  quiet_deps: true # https://github.com/just-the-docs/just-the-docs/issues/1541
+  silence_deprecations: ["import"] # https://github.com/just-the-docs/just-the-docs/issues/1607
+
+# just-the-docs settings, see https://just-the-docs.com/
 theme: just-the-docs
 nav_sort: case_insensitive
+
+# https://just-the-docs.com/docs/configuration/#search
 search_enabled: true
-# These links show up on the top
+search:
+  button: true
+  focus_shortcut_key: "k"
+  placeholder_text: "Search for a product"
+
+# https://just-the-docs.com/docs/configuration/#aux-links
 aux_links:
-  recommendations:
+  Recommendations:
     - /recommendations
-  contribute:
+  Contribute:
     - /contribute
-  source:
+  Source:
     - https://github.com/endoflife-date/endoflife.date
-  api:
-    - /docs/api
+  API:
+    - /docs/api/v1/
+  "Release Data":
+    - https://github.com/endoflife-date/release-data/
+
+# https://just-the-docs.com/docs/configuration/#callouts
+callouts:
+  warning:
+    title: Warning
+    color: yellow
+  note:
+    title: Note
+    color: blue
+  commandInfo:
+    title: To learn the current version on your system
+    color: grey-dk
+
+# jekyll-timeago plugin configuration, see https://github.com/markets/jekyll-timeago
 jekyll_timeago:
   # Use 2 terms in relative timestamps:
   # [YES] x years, y months
@@ -44,15 +69,56 @@ jekyll_timeago:
   # See https://github.com/markets/jekyll-timeago/pull/24
   # for what this does
   threshold: 0.1
-# Cause a build to fail if there is a YAML syntax error in a page's front matter.  (#40)
-strict_front_matter: true
+
+# Default pages / products values
 defaults:
   - scope:
       path: ""
     values:
-      image: /logo.png
+      image: /assets/logo-512x512.png
   - scope:
       path: "products"
     values:
       layout: product
-encoding: utf-8
+      alternate_urls: []
+      identifiers: []
+      auto: []
+      latestColumn: true
+      latestColumnLabel: "Latest"
+      releaseDateColumn: true
+      releaseDateColumnLabel: "Released"
+      discontinuedColumn: false
+      discontinuedColumnLabel: "Discontinued"
+      eoasColumn: false
+      eoasColumnLabel: "Active Support"
+      eolColumn: true
+      eolColumnLabel: "Security Support"
+      eoesColumn: false
+      eoesColumnLabel: "Extended Support"
+      staleReleaseThresholdDays: 365
+      customFields: []
+      LTSLabel: '<abbr title="Long Term Support">LTS</abbr>'
+
+# Include & excludes
+include:
+  - _redirects
+  - _headers
+
+exclude:
+  - .idea
+  - bin
+  - CODE-OF-CONDUCT.md
+  - Gemfile
+  - Gemfile.lock
+  - HACKING.md
+  - LICENSE
+  - netlify.toml
+  - node_modules
+  - package.json
+  - package-lock.json
+  - vendor/
+  - Rakefile
+  - README.md
+  - requirements.txt
+  - runtime.txt
+  - wiretap-report.json

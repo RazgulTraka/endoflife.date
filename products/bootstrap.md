@@ -1,48 +1,71 @@
 ---
 title: Bootstrap
-permalink: /bootstrap
+addedAt: 2019-08-01
 category: framework
-sortReleasesBy: "releaseCycle"
-activeSupportColumn: true
-changelogTemplate: https://github.com/twbs/bootstrap/releases/tag/v__LATEST__
-auto:
--   git: https://github.com/twbs/bootstrap.git
-releases:
--   releaseCycle: "5"
-    eol: false
-    support: true
-    lts: true
-    latest: "5.2.0"
-    latestReleaseDate: 2022-07-19
-    releaseDate: 2021-05-05
--   releaseCycle: "4"
-    eol: 2022-11-01
-    latest: "4.6.2"
-    lts: true
-    support: false
-    latestReleaseDate: 2022-07-19
-    releaseDate: 2018-01-18
--   releaseCycle: "3"
-    eol: 2019-07-24
-    latest: "3.4.1"
-    support: false
-    latestReleaseDate: 2019-02-13
-    releaseDate: 2013-08-19
--   releaseCycle: "2"
-    eol: 2013-08-19
-    latest: "2.3.2"
-    support: false
-    latestReleaseDate: 2013-07-26
-    releaseDate: 2012-01-31
+tags: css-runtime javascript-runtime herodevs
+iconSlug: bootstrap
+permalink: /bootstrap
 releasePolicyLink: https://github.com/twbs/release
-releaseDateColumn: true
+changelogTemplate: https://github.com/twbs/bootstrap/releases/tag/v__LATEST__
+eoasColumn: true
+eoesColumn: Commercial Support
 eolColumn: Critical Support
+
+identifiers:
+  - repology: bootstrap
+  - purl: pkg:npm/bootstrap
+  - purl: pkg:nuget/bootstrap
+  - purl: pkg:gem/bootstrap
+  - purl: pkg:composer/twbs/bootstrap
+  - purl: pkg:github/twbs/bootstrap
+
+# NPM is also possible, but versions before 3.1.1 are not on NPM, so it's better to use git.
+auto:
+  methods:
+    - git: https://github.com/twbs/bootstrap.git
+
+releases:
+  - releaseCycle: "5"
+    releaseDate: 2021-05-05
+    lts: 2022-07-19
+    eoas: false
+    eol: false
+    latest: "5.3.8"
+    latestReleaseDate: 2025-08-25
+
+  - releaseCycle: "4"
+    releaseDate: 2018-01-18
+    lts: 2019-11-26
+    eoas: 2021-11-01
+    eol: 2023-01-01
+    eoes: false
+    latest: "4.6.2"
+    latestReleaseDate: 2022-07-19
+
+  - releaseCycle: "3"
+    releaseDate: 2013-08-19
+    lts: 2014-11-01
+    eoas: 2016-09-05
+    eol: 2019-07-24
+    eoes: false
+    latest: "3.4.1"
+    latestReleaseDate: 2019-02-13
+
+  - releaseCycle: "2"
+    releaseDate: 2012-01-31 # source: https://web.archive.org/web/20140216052758/https://blog.twitter.com/2012/say-hello-to-bootstrap-2
+    eoas: 2013-08-19
+    eol: 2013-08-19
+    eoes: false
+    latest: "2.3.2"
+    latestReleaseDate: 2013-07-26
 
 ---
 
-> [Bootstrap](https://getbootstrap.com/) is the most popular HTML, CSS, and JavaScript framework for developing responsive, mobile first projects on the web.
+> [Bootstrap](https://getbootstrap.com/) is a popular HTML, CSS, and JavaScript framework
+> for developing responsive, mobile first projects on the web.
 
-At times to be determined by the release working group, major versions will be frozen and transitioned to _Long Term Support_ (LTS). After a determined period of time, versions in Long Term Support will be deep-frozen and transition to _Maintenance_.
+At times to be determined by the release working group, major versions will be frozen and transitioned to _Long-Term Support_ (LTS).
+After a determined period of time, versions in Long-Term Support will be deep-frozen and transition to _Maintenance_ (Critical Support).
 
 Versions in _Maintenance_ should not have any changes landed, except for:
 
@@ -50,4 +73,7 @@ Versions in _Maintenance_ should not have any changes landed, except for:
 - **Critical** security updates
 - **Important** documentation updates
 
-Unless a change is urgent, _Maintenance_ releases are likely to be made with minimal frequency. The `v4` branch is currently in Active LTS and will receive bug fixes till 2021-07-01, after which it will only receive critical fixes till its End of Life.
+Unless a change is urgent, _Maintenance_ releases are likely to be made with minimal frequency.
+
+Commercial support for some EOL versions of Bootstrap is available through the
+[HeroDevs Never-Ending Support](https://www.herodevs.com/support/nes-bootstrap) initiative.
