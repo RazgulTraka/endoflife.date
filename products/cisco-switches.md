@@ -8,6 +8,7 @@ category: device
 tags: cisco switch 
 iconSlug: cisco
 releasePolicyLink: https://www.cisco.com/c/en/us/products/eos-eol-listing.html
+latestColumn: false
 activeSupportColumn: false
 discontinuedColumn: false
 sortReleasesBy: discontinued
