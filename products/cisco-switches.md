@@ -58,24 +58,7 @@ releases:
     releaseDate: 2005-09-18
     eol: 2014-10-31
     discontinued: 2019-10-31
-
--   releaseCycle: 
-    link: 
-    releaseDate: 
-    eol: 
-    discontinued:
-    
--   releaseCycle: 
-    link: 
-    releaseDate: 
-    eol: 
-    discontinued:
-    
--   releaseCycle: 
-    link: 
-    releaseDate: 
-    eol: 
-    discontinued:    
+      
 ---
 
 > [Cisco Systems Inc.](https://www.cisco.com/) develops, manufactures, and sells networking hardware, software, telecommunications equipment and other high-technology services and products.  
